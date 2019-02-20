@@ -30,6 +30,12 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		log.info("Started Southsudanemr");
 		AppFrameworkService appFrameworkService = Context.getService(AppFrameworkService.class);
 		appFrameworkService.disableApp("referenceapplication.registrationapp.registerPatient");
+		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientDemographics");
+		appFrameworkService.disableApp("referenceapplication.vitals");
+		appFrameworkService.disableExtension("referenceapplication.realTime.simpleAdmission");
+		appFrameworkService.disableExtension("referenceapplication.realTime.simpleVisitNote");
+		appFrameworkService.disableApp("coreapps.mostRecentVitals");
+		appFrameworkService.disableApp("coreapps.findPatient");
 	}
 	
 	/**
