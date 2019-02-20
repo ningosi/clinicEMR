@@ -11,4 +11,16 @@
 	<packaging>jar</packaging>
 	<name>Southsudanemr API</name>
 	<description>API project for Southsudanemr</description>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>appframework-api</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>uiframework-api</artifactId>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>

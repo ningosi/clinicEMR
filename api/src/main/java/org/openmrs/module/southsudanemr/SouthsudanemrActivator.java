@@ -11,6 +11,7 @@ package org.openmrs.module.southsudanemr;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.api.context.Context;
 import org.openmrs.module.BaseModuleActivator;
 
 /**
@@ -24,7 +25,9 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 	 * @see #started()
 	 */
 	public void started() {
+		
 		log.info("Started Southsudanemr");
+		AppFrameworkService appFrameworkService = Context.getService(AppFrameworkService.class);
 	}
 	
 	/**
