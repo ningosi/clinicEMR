@@ -114,8 +114,6 @@
                 <version>${webservices.restModuleVersion}</version>
                 <scope>test</scope>
             </dependency>
-
-
         </dependencies>
     </dependencyManagement>
 
@@ -148,7 +146,7 @@
         <appframeworkVersion>2.11.0</appframeworkVersion>
         <appuiVersion>1.8.0</appuiVersion>
         <uiframeworkVersion>3.13.0</uiframeworkVersion>
-        <uicommonsVersion>2.6.1</uicommonsVersion>
+        <uicommonsVersion>2.6.0</uicommonsVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <webservices.restModuleVersion>2.22.0</webservices.restModuleVersion>
     </properties>

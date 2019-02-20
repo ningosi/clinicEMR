@@ -13,6 +13,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.BaseModuleActivator;
+import org.openmrs.module.appframework.service.AppFrameworkService;
 
 /**
  * This class contains the logic that is run every time this module is either started or shutdown
@@ -28,6 +29,7 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		
 		log.info("Started Southsudanemr");
 		AppFrameworkService appFrameworkService = Context.getService(AppFrameworkService.class);
+		appFrameworkService.disableApp("referenceapplication.registrationapp.registerPatient");
 	}
 	
 	/**
