@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>org.openmrs.maven.parents</groupId>
@@ -8,64 +8,149 @@
         <version>1.1.0</version>
     </parent>
 
-	<groupId>org.openmrs.module</groupId>
-	<artifactId>southsudanemr</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>Southsudanemr</name>
-	<description>Provide EMR functionality for South Sudan</description>
+    <groupId>org.openmrs.module</groupId>
+    <artifactId>southsudanemr</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Southsudanemr</name>
+    <description>Provide EMR functionality for South Sudan</description>
 
-	<url>https://wiki.openmrs.org/x/FQ4z</url>
+    <url>https://wiki.openmrs.org/x/FQ4z</url>
+    <developers>
+        <developer>
+            <name>
+                IntelliSOFT Consulting LTD
+            </name>
+            <url>
+                http://www.intellisoftkenya.com/
+            </url>
+        </developer>
+    </developers>
 
-	<scm>
-		<connection>scm:git:git@github.com:openmrs/openmrs-module-southsudanemr.git</connection>
-		<developerConnection>scm:git:git@github.com:openmrs/openmrs-module-southsudanemr.git</developerConnection>
-		<url>https://github.com/openmrs/openmrs-module-southsudanemr/</url>
-	</scm>
+    <scm>
+        <connection>scm:git:git@github.com:openmrs/openmrs-module-southsudanemr.git</connection>
+        <developerConnection>scm:git:git@github.com:openmrs/openmrs-module-southsudanemr.git</developerConnection>
+        <url>https://github.com/openmrs/openmrs-module-southsudanemr/</url>
+        <tag>HEAD</tag>
+    </scm>
 
-	<modules>
-		<module>api</module>
-		<module>omod</module>
-	</modules>
 
-	<dependencyManagement>
-		<dependencies>
-			<!-- Importing versions from refapp distro -->
+    <modules>
+        <module>api</module>
+        <module>omod</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
             <dependency>
-                <groupId>org.openmrs.distro</groupId>
-                <artifactId>referenceapplication</artifactId>
-                <version>2.4</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
+                <scope>test</scope>
             </dependency>
-		</dependencies>
-	</dependencyManagement>
+            <!-- Begin OpenMRS core -->
+            <dependency>
+                <groupId>org.openmrs.api</groupId>
+                <artifactId>openmrs-api</artifactId>
+                <version>${openMRSVersion}</version>
+                <type>jar</type>
+                <scope>provided</scope>
+            </dependency>
 
-	<repositories>
-		<repository>
-			<id>openmrs-repo</id>
-			<name>OpenMRS Nexus Repository</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
-		</repository>
-		<repository>
-			<id>central</id>
-			<name>Maven Repository Switchboard</name>
-			<layout>default</layout>
-			<url>http://repo1.maven.org/maven2</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>openmrs-repo</id>
-			<name>OpenMRS Nexus Repository</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
+            <dependency>
+                <groupId>org.openmrs.web</groupId>
+                <artifactId>openmrs-web</artifactId>
+                <version>${openMRSVersion}</version>
+                <type>jar</type>
+                <scope>provided</scope>
+            </dependency>
 
-	<properties>
-		<openmrsPlatformVersion>1.11.6</openmrsPlatformVersion>
-	</properties>
+            <dependency>
+                <groupId>org.openmrs.api</groupId>
+                <artifactId>openmrs-api</artifactId>
+                <version>${openMRSVersion}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.web</groupId>
+                <artifactId>openmrs-web</artifactId>
+                <version>${openMRSVersion}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.test</groupId>
+                <artifactId>openmrs-test</artifactId>
+                <version>${openMRSVersion}</version>
+                <type>pom</type>
+                <scope>test</scope>
+            </dependency>
+            <!-- custom module -->
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>appframework-api</artifactId>
+                <version>${appframeworkVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>appui-omod</artifactId>
+                <version>${appuiVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>uiframework-api</artifactId>
+                <version>${uiframeworkVersion}</version>
+                <type>jar</type>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>webservices.rest-omod-common</artifactId>
+                <version>${webservices.restModuleVersion}</version>
+                <scope>test</scope>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>openmrs-repo</id>
+            <name>OpenMRS Nexus Repository</name>
+            <url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <layout>default</layout>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>openmrs-repo</id>
+            <name>OpenMRS Nexus Repository</name>
+            <url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <properties>
+        <openMRSVersion>1.11.6</openMRSVersion>
+        <appframeworkVersion>2.11.0</appframeworkVersion>
+        <appuiVersion>1.8.0</appuiVersion>
+        <uiframeworkVersion>3.13.0</uiframeworkVersion>
+        <uicommonsVersion>2.6.1</uicommonsVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <webservices.restModuleVersion>2.22.0</webservices.restModuleVersion>
+    </properties>
+
 </project>
