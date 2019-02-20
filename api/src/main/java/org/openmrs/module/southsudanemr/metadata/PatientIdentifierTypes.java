@@ -1,5 +1,7 @@
 package org.openmrs.module.southsudanemr.metadata;
 
+import org.openmrs.module.metadatadeploy.descriptor.PatientIdentifierTypeDescriptor;
+
 public class PatientIdentifierTypes {
 	
 	public static PatientIdentifierTypeDescriptor ART_NUMBER = new PatientIdentifierTypeDescriptor() {
@@ -22,23 +24,23 @@ public class PatientIdentifierTypes {
 			return " The first three letters of the facility, followed by / then 5 numbers with no spaces";
 		}
 	};
-
+	
 	public static PatientIdentifierTypeDescriptor HEI_NUMBER = new PatientIdentifierTypeDescriptor() {
-
+		
 		@Override
 		public String name() {
 			return "HEI No";
 		}
-
+		
 		@Override
 		public String description() {
 			return "HIV Exposed infant number";
 		}
-
+		
 		public String uuid() {
 			return "4fcb62cc-3509-11e9-8c1e-73e323400228";
 		}
-
+		
 		public String formatDescription() {
 			return "";
 		}
