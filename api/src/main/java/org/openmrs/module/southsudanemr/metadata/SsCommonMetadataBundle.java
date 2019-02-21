@@ -4,7 +4,7 @@ import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CommonMetadataBundle extends AbstractMetadataBundle {
+public class SsCommonMetadataBundle extends AbstractMetadataBundle {
 	
 	public void install() throws Exception {
 		// install the patient identifier type
