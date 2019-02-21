@@ -1,6 +1,7 @@
-package org.openmrs.module.southsudanemr.metadata;
+package org.openmrs.module.southsudanemr.deploy;
 
 import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
+import org.openmrs.module.southsudanemr.metadata.PatientIdentifierTypes;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -13,7 +13,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.BaseModuleActivator;
+import org.openmrs.module.Module;
+import org.openmrs.module.ModuleFactory;
 import org.openmrs.module.appframework.service.AppFrameworkService;
+import org.openmrs.module.metadatadeploy.api.MetadataDeployService;
+import org.openmrs.module.southsudanemr.deploy.SsCommonMetadataBundle;
 
 /**
  * This class contains the logic that is run every time this module is either started or shutdown
@@ -36,6 +40,15 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		appFrameworkService.disableExtension("referenceapplication.realTime.simpleVisitNote");
 		appFrameworkService.disableApp("coreapps.mostRecentVitals");
 		appFrameworkService.disableApp("coreapps.findPatient");
+		
+		MetadataDeployService deployService = Context.getService(MetadataDeployService.class);
+		try {
+			installCommonMetadata(deployService);
+		}
+		catch (Exception ex) {
+			throw new RuntimeException("Failed to setup initial data", ex);
+		}
+		log.info("South Sudan Module started");
 	}
 	
 	/**
@@ -43,6 +56,18 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 	 */
 	public void shutdown() {
 		log.info("Shutdown Southsudanemr");
+	}
+	
+	private void installCommonMetadata(MetadataDeployService deployService) {
+		try {
+			deployService.installBundle(Context.getRegisteredComponents(SsCommonMetadataBundle.class).get(0));
+		}
+		
+		catch (Exception e) {
+			Module mod = ModuleFactory.getModuleById("southsudanemr");
+			ModuleFactory.stopModule(mod);
+			throw new RuntimeException("Failed to install the common metadata ", e);
+		}
 	}
 	
 }
