@@ -134,6 +134,32 @@
                 <version>${metadatasharingVersion}</version>
                 <scope>provided</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>emrapi-api</artifactId>
+                <version>${emrapiVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>appui-omod</artifactId>
+                <version>${appuiVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>registrationcore-api</artifactId>
+                <version>${registrationcoreVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>registrationapp-api</artifactId>
+                <version>${registrationappVersion}</version>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -185,6 +211,8 @@
         <uicommonsVersion>2.3.0</uicommonsVersion>
         <uilibraryVersion>1.5.0</uilibraryVersion>
         <webservices.restVersion>2.20.0</webservices.restVersion>
+        <registrationappVersion>1.12.0</registrationappVersion>
+        <registrationcoreVersion>1.8.0</registrationcoreVersion>
     </properties>
 
 </project>
