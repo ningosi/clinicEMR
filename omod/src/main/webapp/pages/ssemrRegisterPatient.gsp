@@ -84,3 +84,216 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
     sections.push('${section.id}');
     <% } %>
 </script>
+
+<div id="validation-errors" class="note-container" style="display: none" >
+    <div class="note error">
+        <div id="validation-errors-content" class="text">
+
+        </div>
+    </div>
+</div>
+<div id="content" class="container">
+    <h2>
+        ${ ui.message("registrationapp.registration.label") }
+    </h2>
+    <div id="similarPatients" class="highlighted" style="display: none;">
+        <div class="left" style="padding: 6px"><span id="similarPatientsCount"></span> ${ ui.message("registrationapp.similarPatientsFound") }</div><button class="right" id="reviewSimilarPatientsButton">${ ui.message("registrationapp.reviewSimilarPatients.button") }</button>
+        <div class="clear"></div>
+    </div>
+    <div id="similarPatientsSlideView" style="display: none;">
+        <ul id="similarPatientsSelect" class="matchingPatientContainer select" style="width: auto;">
+
+        </ul>
+    </div>
+    <div id="matchedPatientTemplates" style="display:none;">
+        <div class="container"
+             style="border-color: #00463f; border-style: solid; border-width:2px; margin-bottom: 10px;">
+            <div class="name"></div>
+            <div class="info"></div>
+            <div class="identifiers">
+                <span class="idName idNameTemplate"></span><span class="idValue idValueTemplate"></span>
+            </div>
+        </div>
+        <button class="local_button" style="float:right; margin:10px; padding: 2px 8px" onclick="location.href='/openmrs-standalone/coreapps/clinicianfacing/patient.page?patientId=7'">
+            ${ui.message("registrationapp.open")}
+        </button>
+        <button class="mpi_button" style="float:right; margin:10px; padding: 2px 8px" onclick="location.href='/execute_script_which_will_request_service_to_import_patient_from_mpi_to_local_DB_and_redirect_to_patient_info'">
+            ${ui.message("registrationapp.importAndOpen")}
+        </button>
+    </div>
+    <form class="simple-form-ui" id="registration" method="POST">
+        <% if (includeRegistrationDateSection) { %>
+        <section id="registration-info" class="non-collapsible">
+            <span class="title">${ui.message("registrationapp.registrationDate.label")}</span>
+
+            <fieldset id="registration-date" class="multiple-input-date no-future-date">
+                <legend id="registrationDateLabel">${ui.message("registrationapp.registrationDate.label")}</legend>
+                <h3>${ui.message("registrationapp.registrationDate.question")}</h3>
+
+                <p>
+                    <input id="checkbox-enable-registration-date" type="checkbox" checked/>
+                    <label for="checkbox-enable-registration-date">${ui.message("registrationapp.registrationDate.today")}</label>
+                </p>
+
+                ${ ui.includeFragment("uicommons", "field/multipleInputDate", [
+                        label: "",
+                        formFieldName: "registrationDate",
+                        left: true,
+                        classes: ['required'],
+                        showEstimated: false,
+                        initialValue: new Date(),
+                        minYear: minRegistrationAgeYear,
+                        maxYear: maxAgeYear,
+                ])}
+            </fieldset>
+        </section>
+        <% } %>
+        <!-- read configurable sections from the json config file-->
+        <% formStructure.sections.each { structure ->
+            def section = structure.value
+            def questions = section.questions
+        %>
+        <section id="${section.id}" class="non-collapsible">
+            <span id="${section.id}_label" class="title">${section.id == 'demographics' ? ui.message("registrationapp.patient.demographics.label") : ui.message(section.label)}</span>
+
+            <!-- hardcoded name, gender, and birthdate are added for the demographics section -->
+            <% if (section.id == 'demographics') { %>
+
+            <fieldset id="demographics-name">
+
+                <legend>${ui.message("registrationapp.patient.name.label")}</legend>
+                <div>
+                    <h3>${ui.message("registrationapp.patient.name.question")}</h3>
+
+                    <% nameTemplate.lines.each { line ->
+                        // go through each line in the template and find the first name token; assumption is there is only one name token per line
+                        def name = line.find({it['isToken'] == 'IS_NAME_TOKEN'})['codeName'];
+                        def initialNameFieldValue = ""
+                        if(patient.personName && patient.personName[name]){
+                            initialNameFieldValue = patient.personName[name]
+                        }
+                    %>
+                    ${ ui.includeFragment("registrationapp", "field/personName", [
+                            label: ui.message(nameTemplate.nameMappings[name]),
+                            size: nameTemplate.sizeMappings[name],
+                            formFieldName: name,
+                            dataItems: 4,
+                            left: true,
+                            initialValue: initialNameFieldValue,
+                            classes: [(name == "givenName" || name == "familyName") ? "required" : ""]
+                    ])}
+
+                    <% } %>
+                    <legend id="genderLabel">${ ui.message("emr.gender") }</legend>
+                    <h3>${ui.message("registrationapp.patient.gender.question")}</h3>
+                    ${ ui.includeFragment("uicommons", "field/dropDown", [
+                            id: "gender",
+                            formFieldName: "gender",
+                            options: genderOptions,
+                            classes: ["required"],
+                            initialValue: patient.gender,
+                            hideEmptyLabel: true,
+                            expanded: true
+                    ])}
+                    <legend id="birthdateLabel">${ui.message("registrationapp.patient.birthdate.label")}</legend>
+                    <h3>${ui.message("registrationapp.patient.birthdate.question")}</h3>
+                    ${ ui.includeFragment("uicommons", "field/multipleInputDate", [
+                            label: "",
+                            formFieldName: "birthdate",
+                            left: true,
+                            showEstimated: true,
+                            estimated: patient.birthdateEstimated,
+                            initialValue: patient.birthdate,
+                            minYear: minAgeYear,
+                            maxYear: maxAgeYear
+                    ])}
+                </div>
+                <input type="hidden" name="preferred" value="true"/>
+            <% } %>
+
+            <!-- allow customization of additional question in the patient identification section, if it is included -->
+            <% if (section.id == 'patient-identification-section') {
+                identifierSectionFound = true; %>
+            <% if (allowManualIdentifier) { %>
+            ${ ui.includeFragment("registrationapp", "field/allowManualIdentifier", [
+                    identifierTypeName: ui.format(primaryIdentifierType)
+            ])}
+            <% } %>
+            <% } %>
+
+            <% questions.each { question ->
+                def fields=question.fields
+                def classes = "";
+                if (question.legend == "Person.address") {
+                    classes = "requireOne"
+                }
+                if (question.cssClasses) {
+                    classes = classes + (classes.length() > 0 ? ' ' : '') + question.cssClasses.join(" ")
+                }
+            %>
+            <fieldset id="${question.id}"
+                <% if (classes.length() > 0) { %> class="${classes}" <% } %>
+                <% if (question.fieldSeparator) { %> field-separator="${question.fieldSeparator}" <% } %>
+                <% if (question.displayTemplate) { %> display-template="${ui.escapeAttribute(question.displayTemplate)}" <% } %>
+            >
+                <legend>${ ui.message(question.legend)}</legend>
+                <% if(question.legend == "Person.address"){ %>
+                ${ui.includeFragment("uicommons", "fieldErrors", [fieldName: "personAddress"])}
+                <% } %>
+                <% if(question.header) { %>
+                <h3>${ui.message(question.header)}</h3>
+                <% } %>
+
+                <% fields.each { field ->
+                    def configOptions = (field.fragmentRequest.configuration != null) ? field.fragmentRequest.configuration : [:] ;
+                    configOptions.label = ui.message(field.label)
+                    configOptions.formFieldName = field.formFieldName
+                    configOptions.left = true
+                    configOptions.classes = field.cssClasses
+                    if (field.type == 'personAddress') {
+                        configOptions.addressTemplate = addressTemplate
+                    }
+                    if (field.type == 'personRelationships') {
+                        configOptions.relationshipTypes = relationshipTypes
+                    }
+                %>
+                ${ ui.includeFragment(field.fragmentRequest.providerName, field.fragmentRequest.fragmentId, configOptions)}
+                <% } %>
+            </fieldset>
+            <% } %>
+        </section>
+        <% } %>
+
+        <% if (allowManualIdentifier && !identifierSectionFound) { %>
+        <section id="patient-identification-section" class="non-collapsible">
+            <span class="title">${ui.message("registrationapp.patient.identifiers.label")}</span>
+
+            ${ ui.includeFragment("registrationapp", "field/allowManualIdentifier", [
+                    identifierTypeName: ui.format(primaryIdentifierType)
+            ])}
+        </section>
+        <% } %>
+
+        <div id="confirmation">
+            <span id="confirmation_label" class="title">${ui.message("registrationapp.patient.confirm.label")}</span>
+            <div class="before-dataCanvas"></div>
+            <div id="dataCanvas"></div>
+            <div class="after-data-canvas"></div>
+            <div id="exact-matches" style="display: none; margin-bottom: 20px">
+                <span class="field-error">${ui.message("registrationapp.exactPatientFound")}</span>
+                <ul id="exactPatientsSelect" class="select"></ul>
+            </div>
+            <div id="confirmationQuestion">
+                ${ ui.message("registrationapp.confirm") }
+                <p style="display: inline">
+                    <input id="submit" type="submit" class="submitButton confirm right" value="${ui.message("registrationapp.patient.confirm.label")}" />
+                </p>
+                <p style="display: inline">
+                    <input id="cancelSubmission" class="cancel" type="button" value="${ui.message("registrationapp.cancel")}" />
+                </p>
+            </div>
+        </div>
+
+
+    </form>
+</div>
