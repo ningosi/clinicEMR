@@ -161,8 +161,9 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
 
             <fieldset id="demographics-name">
 
-                <legend>${ui.message("registrationapp.patient.name.label")}</legend>
+                <legend>${ui.message("southsudanemr.patient.information")}</legend>
                 <div>
+
                     <h3>${ui.message("registrationapp.patient.name.question")}</h3>
 
                     <% nameTemplate.lines.each { line ->
@@ -184,8 +185,7 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
                     ])}
 
                     <% } %>
-                    <legend id="genderLabel">${ ui.message("emr.gender") }</legend>
-                    <h3>${ui.message("registrationapp.patient.gender.question")}</h3>
+                    <h3>${ui.message("southsudanemr.gender")}</h3>
                     ${ ui.includeFragment("uicommons", "field/dropDown", [
                             id: "gender",
                             formFieldName: "gender",
@@ -195,8 +195,7 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
                             hideEmptyLabel: true,
                             expanded: true
                     ])}
-                    <legend id="birthdateLabel">${ui.message("registrationapp.patient.birthdate.label")}</legend>
-                    <h3>${ui.message("registrationapp.patient.birthdate.question")}</h3>
+                    <h3>${ui.message("southsudanemr.birthdate")}</h3>
                     ${ ui.includeFragment("uicommons", "field/multipleInputDate", [
                             label: "",
                             formFieldName: "birthdate",
@@ -208,7 +207,6 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
                             maxYear: maxAgeYear
                     ])}
                 </div>
-                <input type="hidden" name="preferred" value="true"/>
             <% } %>
 
             <!-- allow customization of additional question in the patient identification section, if it is included -->
