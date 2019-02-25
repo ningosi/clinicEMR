@@ -16,7 +16,7 @@
       }
     ],
     "config": {
-      "registrationAppLink": "southsudanemr/registerPatient.page?appId=southsudanemr.registrationapp.registerPatient"
+      "registrationAppLink": "registrationapp/registerPatient.page?appId=southsudanemr.registerPatient"
     }
   }
 

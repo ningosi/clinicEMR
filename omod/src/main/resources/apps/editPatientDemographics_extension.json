@@ -4,7 +4,7 @@
     "extensionPointId": "patientHeader.editPatientDemographics",
     "type": "link",
     "label": "general.edit",
-    "url": "southsudanemr/editSection.page?patientId={{patient.patientId}}&sectionId=demographics&appId=southsudanemr.registrationapp.registerPatient"
+    "url": "registrationapp/editSection.page?patientId={{patient.patientId}}&sectionId=demographics&appId=southsudanemr.registerPatient"
 
   }
 ]
