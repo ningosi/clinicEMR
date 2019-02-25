@@ -167,4 +167,48 @@ public class PersonAttributeTypes {
 			return "150c5ee6-38ee-11e9-85fa-2b4a1bb1310c";
 		}
 	};
+	
+	public static PersonAttributeTypeDescriptor VILLAGE = new PersonAttributeTypeDescriptor() {
+		
+		@Override
+		public double sortWeight() {
+			return 8;
+		}
+		
+		@Override
+		public String name() {
+			return "Village";
+		}
+		
+		@Override
+		public String description() {
+			return "";
+		}
+		
+		public String uuid() {
+			return "d36ab60c-3908-11e9-a1ac-7384c36e64e0";
+		}
+	};
+	
+	public static PersonAttributeTypeDescriptor LAND_MARK = new PersonAttributeTypeDescriptor() {
+		
+		@Override
+		public double sortWeight() {
+			return 8;
+		}
+		
+		@Override
+		public String name() {
+			return "Land Mark";
+		}
+		
+		@Override
+		public String description() {
+			return "";
+		}
+		
+		public String uuid() {
+			return "fdd62d90-3908-11e9-a5b2-d7a4ff4134bd";
+		}
+	};
 }

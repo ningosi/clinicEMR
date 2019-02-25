@@ -32,7 +32,7 @@
                   "type": "personAttribute",
                   "label": "Village",
                   "formFieldName": "village",
-                  "uuid": "14d4f066-15f5-102d-96e4-000c29c2a5d7",
+                  "uuid": "d36ab60c-3908-11e9-a1ac-7384c36e64e0",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
@@ -42,7 +42,7 @@
                   "type": "personAttribute",
                   "label": "Landmark",
                   "formFieldName": "landmark",
-                  "uuid": "8c44d411-285f-46c6-9f17-c2f919823b34",
+                  "uuid": "fdd62d90-3908-11e9-a5b2-d7a4ff4134bd",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
