@@ -142,6 +142,45 @@
                   }
                 }
               ]
+            },
+            {
+              "legend": "Patient Identifiers",
+              "fields": [
+                {
+                  "type": "patientIdentifier",
+                  "label": "Unique ART No.",
+                  "formFieldName": "uniqueARTNo",
+                  "uuid": "5a580b6a-3508-11e9-aba5-dbb924006cb7",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "id": "uniqueARTNo",
+                      "regex": "^$|^[A-Z][FM]\\d{5}([A-Z0-9]){7}$"
+                    }
+                  },
+                  "cssClasses": [
+                    "regex"
+                  ]
+                },
+                {
+                  "type": "patientIdentifier",
+                  "label": "HIV Exposed Infant No.",
+                  "formFieldName": "heiNo",
+                  "uuid": "4fcb62cc-3509-11e9-8c1e-73e323400228",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "id": "heiNo",
+                      "regex": "^$|^[A-Z][FM]\\d{5}([A-Z0-9]){7}$"
+                    }
+                  },
+                  "cssClasses": [
+                    "regex"
+                  ]
+                }
+              ]
             }
           ]
         }
