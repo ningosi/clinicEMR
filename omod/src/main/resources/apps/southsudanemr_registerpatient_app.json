@@ -10,7 +10,7 @@
         "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
         "type": "link",
         "label": "Register Patient",
-        "url": "registrationapp/registerPatient.page?appId=southsudanemr.registrationapp.registerPatient",
+        "url": "southsudanemr/ssemrRegisterPatient.page?appId=southsudanemr.registrationapp.registerPatient",
         "icon": "icon-user",
         "order": 5,
         "requiredPrivilege": "App: registrationapp.registerPatient"
