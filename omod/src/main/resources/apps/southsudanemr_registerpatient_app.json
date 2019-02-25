@@ -156,7 +156,7 @@
                     "fragmentId": "field/text",
                     "config": {
                       "id": "uniqueARTNo",
-                      "regex": "^$|^[A-Z][FM]\\d{5}([A-Z0-9]){7}$"
+                      "regex": "^[0-9]{10}$|^$"
                     }
                   },
                   "cssClasses": [
@@ -173,7 +173,7 @@
                     "fragmentId": "field/text",
                     "config": {
                       "id": "heiNo",
-                      "regex": "^$|^[A-Z][FM]\\d{5}([A-Z0-9]){7}$"
+                      "regex": "^[0-9]{10}$|^$"
                     }
                   },
                   "cssClasses": [
