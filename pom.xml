@@ -134,6 +134,45 @@
                 <version>${metadatasharingVersion}</version>
                 <scope>provided</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>emrapi-api</artifactId>
+                <version>${emrapiVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>registrationcore-api</artifactId>
+                <version>${registrationcoreVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>registrationapp-api</artifactId>
+                <version>${registrationappVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>idgen-api</artifactId>
+                <version>${idgenVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>uicommons-api</artifactId>
+                <version>${uicommonsVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openmrs</groupId>
+                <artifactId>event-api-1.x</artifactId>
+                <version>${eventVersion}</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -181,10 +220,12 @@
         <reportingVersion>0.9.9</reportingVersion>
         <reportingCompatibilityVersion>1.5.8</reportingCompatibilityVersion>
         <serialization.xstreamVersion>0.2.10</serialization.xstreamVersion>
-        <uiframeworkVersion>3.4</uiframeworkVersion>
-        <uicommonsVersion>2.3.0</uicommonsVersion>
+        <uiframeworkVersion>3.9</uiframeworkVersion>
+        <uicommonsVersion>2.4.0</uicommonsVersion>
         <uilibraryVersion>1.5.0</uilibraryVersion>
         <webservices.restVersion>2.20.0</webservices.restVersion>
+        <registrationappVersion>1.12.0</registrationappVersion>
+        <registrationcoreVersion>1.8.0</registrationcoreVersion>
     </properties>
 
 </project>
