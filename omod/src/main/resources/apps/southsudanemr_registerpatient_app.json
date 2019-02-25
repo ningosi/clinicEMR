@@ -1,16 +1,16 @@
 [
   {
-    "id": "southsudanemr.registrationapp.registerPatient",
+    "id": "southsudanemr.registerPatient",
     "instanceOf": "registrationapp.registerPatient",
     "label": "Register Patient",
-    "description": "southsudanemr.registrationapp.registerpatient.description",
+    "description": "southsudanemr.registerpatient.description",
     "extensions": [
       {
-        "id": "southsudanemr.registrationapp.registerPatient.homepageLink",
+        "id": "southsudanemr.registerPatient.homepageLink",
         "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
         "type": "link",
         "label": "Register Patient",
-        "url": "southsudanemr/ssemrRegisterPatient.page?appId=southsudanemr.registrationapp.registerPatient",
+        "url": "registrationapp/registerPatient.page?appId=southsudanemr.registerPatient",
         "icon": "icon-user",
         "order": 5,
         "requiredPrivilege": "App: registrationapp.registerPatient"
@@ -52,7 +52,7 @@
                   "type": "personAttribute",
                   "label": "Mobile Number",
                   "formFieldName": "mobileNumber",
-                  "uuid": "a00eda65-2f66-4fda-a683-c1787eb626a9",
+                  "uuid": "f8578772-38dd-11e9-b4e2-8fa3c8be8eca",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text",
@@ -68,7 +68,7 @@
                   "type": "personAttribute",
                   "label": "Alternative Mobile Number",
                   "formFieldName": "alternativeMobileNumber",
-                  "uuid": "9fd153b0-3803-11e9-b055-d7f3ca3451ab",
+                  "uuid": "250edff4-38de-11e9-94e6-1fda4e6c49ee",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text",

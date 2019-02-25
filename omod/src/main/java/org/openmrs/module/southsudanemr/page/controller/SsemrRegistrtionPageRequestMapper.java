@@ -15,7 +15,7 @@ import org.openmrs.ui.framework.page.PageRequest;
 import org.openmrs.ui.framework.page.PageRequestMapper;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class SsemrRegistrtionPageRequestMapper implements PageRequestMapper {
 	
 	protected final Log log = LogFactory.getLog(getClass());

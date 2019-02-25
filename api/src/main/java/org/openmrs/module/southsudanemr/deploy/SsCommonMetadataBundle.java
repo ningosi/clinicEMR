@@ -2,6 +2,7 @@ package org.openmrs.module.southsudanemr.deploy;
 
 import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
 import org.openmrs.module.southsudanemr.metadata.PatientIdentifierTypes;
+import org.openmrs.module.southsudanemr.metadata.PersonAttributeTypes;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,6 +12,10 @@ public class SsCommonMetadataBundle extends AbstractMetadataBundle {
 		// install the patient identifier type
 		install(PatientIdentifierTypes.ART_NUMBER);
 		install(PatientIdentifierTypes.HEI_NUMBER);
+
+		//install person attribute types here
+		install(PersonAttributeTypes.MOBILE_NUMBER);
+		install(PersonAttributeTypes.ALTERNATIVE_MOBILE_NUMBER);
 	}
 	
 }

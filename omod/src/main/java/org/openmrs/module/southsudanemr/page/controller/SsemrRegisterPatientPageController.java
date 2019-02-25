@@ -68,7 +68,7 @@ public class SsemrRegisterPatientPageController extends AbstractRegistrationAppP
 		model.addAttribute("relationshipTypes", Context.getPersonService().getAllRelationshipTypes());
 		
 		List<Extension> includeFragments = appFrameworkService
-		        .getExtensionsForCurrentUser("registerPatient.includeFragments");
+		        .getExtensionsForCurrentUser("ssemrRegisterPatient.includeFragments");
 		Collections.sort(includeFragments);
 		model.addAttribute("includeFragments", includeFragments);
 	}

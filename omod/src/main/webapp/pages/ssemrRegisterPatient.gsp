@@ -24,6 +24,7 @@
 %>
 
 <% if(includeFragments){
+    ${includeFragments}
     includeFragments.each{ %>
 ${ ui.includeFragment(it.extensionParams.provider, it.extensionParams.fragment)}
 <%   }
