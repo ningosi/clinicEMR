@@ -10,11 +10,181 @@
         "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
         "type": "link",
         "label": "Register Patient",
-        "url": "registrationapp/registerPatient.page?appId=southsudanemr.registrationapp.registerPatient",
+        "url": "southsudanemr/ssemrRegisterPatient.page?appId=southsudanemr.registrationapp.registerPatient",
         "icon": "icon-user",
         "order": 5,
         "requiredPrivilege": "App: registrationapp.registerPatient"
       }
-    ]
+    ],
+    "config": {
+      "allowUnknownPatients": false,
+      "allowRetrospectiveEntry": true,
+      "afterCreatedUrl": "/coreapps/clinicianfacing/patient.page?patientId={{patientId}}",
+      "sections": [
+        {
+          "id": "demographics",
+          "label": "southsudanemr.registrationapp.otherdetails",
+          "questions": [
+            {
+              "legend": "Address & Contacts",
+              "fields": [
+                {
+                  "type": "personAttribute",
+                  "label": "Village",
+                  "formFieldName": "village",
+                  "uuid": "14d4f066-15f5-102d-96e4-000c29c2a5d7",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Landmark",
+                  "formFieldName": "landmark",
+                  "uuid": "8c44d411-285f-46c6-9f17-c2f919823b34",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Mobile Number",
+                  "formFieldName": "mobileNumber",
+                  "uuid": "a00eda65-2f66-4fda-a683-c1787eb626a9",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "regex": "^[0-9]{10}$|^$"
+                    }
+                  },
+                  "cssClasses": [
+                    "number", "regex"
+                  ]
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Alternative Mobile Number",
+                  "formFieldName": "alternativeMobileNumber",
+                  "uuid": "9fd153b0-3803-11e9-b055-d7f3ca3451ab",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "regex": "^[0-9]{10}$|^$"
+                    }
+                  },
+                  "cssClasses": [
+                    "number", "regex"
+                  ]
+                }
+              ]
+            },
+            {
+              "legend": "Treatment Supporter",
+              "fields": [
+                {
+                  "type": "personAttribute",
+                  "label": "FirstName",
+                  "formFieldName": "supporterFirstName",
+                  "uuid": "595f0002-3804-11e9-8162-9bb2e0c18e6f",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "LastName",
+                  "formFieldName": "supporterLastName",
+                  "uuid": "7fe2d690-3804-11e9-808b-57747e3a8b2a",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Mobile Number",
+                  "formFieldName": "supporterMobileNumber",
+                  "uuid": "f31bb4ba-3804-11e9-807f-73ba0a5dc7fd",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "regex": "^[0-9]{10}$|^$"
+                    }
+                  },
+                  "cssClasses": [
+                    "number", "regex"
+                  ]
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Address",
+                  "formFieldName": "supporterAddress",
+                  "uuid": "e9a1fdc2-3804-11e9-a094-6f1ef7489e11",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Homebased Care Provided By",
+                  "formFieldName": "supporterCareProvider",
+                  "uuid": "e28dd65a-3804-11e9-aa9b-1b0c80a0a479",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                }
+              ]
+            },
+            {
+              "legend": "Patient Identifiers",
+              "fields": [
+                {
+                  "type": "patientIdentifier",
+                  "label": "Unique ART No.",
+                  "formFieldName": "uniqueARTNo",
+                  "uuid": "5a580b6a-3508-11e9-aba5-dbb924006cb7",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "id": "uniqueARTNo",
+                      "regex": "^$|^[A-Z][FM]\\d{5}([A-Z0-9]){7}$"
+                    }
+                  },
+                  "cssClasses": [
+                    "regex"
+                  ]
+                },
+                {
+                  "type": "patientIdentifier",
+                  "label": "HIV Exposed Infant No.",
+                  "formFieldName": "heiNo",
+                  "uuid": "4fcb62cc-3509-11e9-8c1e-73e323400228",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "id": "heiNo",
+                      "regex": "^$|^[A-Z][FM]\\d{5}([A-Z0-9]){7}$"
+                    }
+                  },
+                  "cssClasses": [
+                    "regex"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 ]
