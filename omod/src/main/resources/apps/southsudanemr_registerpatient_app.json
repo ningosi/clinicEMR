@@ -87,9 +87,9 @@
               "fields": [
                 {
                   "type": "personAttribute",
-                  "label": "FirstName",
+                  "label": "First Name",
                   "formFieldName": "supporterFirstName",
-                  "uuid": "595f0002-3804-11e9-8162-9bb2e0c18e6f",
+                  "uuid": "2d17c3f0-38ed-11e9-ac35-0f1befa73a84",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
@@ -97,9 +97,9 @@
                 },
                 {
                   "type": "personAttribute",
-                  "label": "LastName",
+                  "label": "Last Name",
                   "formFieldName": "supporterLastName",
-                  "uuid": "7fe2d690-3804-11e9-808b-57747e3a8b2a",
+                  "uuid": "5f0c5fce-38ed-11e9-9f45-ab353e2c8c47",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
@@ -109,7 +109,7 @@
                   "type": "personAttribute",
                   "label": "Mobile Number",
                   "formFieldName": "supporterMobileNumber",
-                  "uuid": "f31bb4ba-3804-11e9-807f-73ba0a5dc7fd",
+                  "uuid": "99a0f6a4-38ed-11e9-b80b-c3d8b563284d",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text",
@@ -125,7 +125,7 @@
                   "type": "personAttribute",
                   "label": "Address",
                   "formFieldName": "supporterAddress",
-                  "uuid": "e9a1fdc2-3804-11e9-a094-6f1ef7489e11",
+                  "uuid": "c4acc616-38ed-11e9-a13f-d3831b0ff624",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
@@ -133,9 +133,9 @@
                 },
                 {
                   "type": "personAttribute",
-                  "label": "Homebased Care Provided By",
+                  "label": "Homebased Care Provider",
                   "formFieldName": "supporterCareProvider",
-                  "uuid": "e28dd65a-3804-11e9-aa9b-1b0c80a0a479",
+                  "uuid": "150c5ee6-38ee-11e9-85fa-2b4a1bb1310c",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"

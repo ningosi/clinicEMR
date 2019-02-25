@@ -40,10 +40,10 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		appFrameworkService.disableExtension("referenceapplication.realTime.simpleVisitNote");
 		appFrameworkService.disableApp("coreapps.mostRecentVitals");
 		appFrameworkService.disableApp("coreapps.findPatient");
-
+		
 		// the extension to the edit person details
 		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientDemographics");
-
+		
 		// disable apps on the Clinican facing dashboard added through coreapps 1.12.0
 		appFrameworkService.disableApp("coreapps.mostRecentVitals");
 		appFrameworkService.disableApp("coreapps.diagnoses");
