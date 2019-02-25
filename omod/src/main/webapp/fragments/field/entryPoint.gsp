@@ -5,15 +5,16 @@
     </label>
     <select name="${config.formFieldName}">
         <option value="">Select One</option>
-        <option value ="dce180a8-30ab-102d-86b0-7a5022ba4115">1 - VCT</option>
-        <option value ="dc96cf5e-30ab-102d-86b0-7a5022ba4115">2 - TB Clinic</option>
-        <option value ="dc96e101-30ab-102d-86b0-7a5022ba4115">3 - STI Clinic</option>
-        <option value ="dcd70b18-30ab-102d-86b0-7a5022ba4115">4 - ANC</option>
-        <option value ="dcd743c3-30ab-102d-86b0-7a5022ba4115">5 - OPD Clinic</option>
-        <option value ="dcd77876-30ab-102d-86b0-7a5022ba4115">6 - Pediatric</option>
-        <option value ="dcd77876-30ab-102d-86b0-7a5022ba4115">7 - CBTC</option>
-        <option value ="dcd77876-30ab-102d-86b0-7a5022ba4115">8 - Index Testing</option>
-        <option value ="dcd77876-30ab-102d-86b0-7a5022ba4115">9 - Other</option>
+        <option value ="160539AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">1 - VCT</option>
+        <option value ="160541AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">2 - TB Clinic</option>
+        <option value ="160546AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">3 - STI Clinic</option>
+        <option value ="159937AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">4 - ANC</option>
+        <option value ="160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">5 - OPD Clinic</option>
+        <option value ="160544AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">6 - Pediatric</option>
+        <option value ="5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">7 - CBTC*</option>
+        <option value ="5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">8 - Index Testing*</option>
+        <option value ="160552AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">9 - Nutrition</option>
+        <option value ="5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">10 - Other</option>
     </select>
     <span class="field-error"></span>
 </p>
