@@ -21,10 +21,7 @@ public class SsCommonMetadataBundle extends AbstractMetadataBundle {
 		install(PersonAttributeTypes.TREATMENT_SUPPOTER_MOBILE_NUMBER);
 		install(PersonAttributeTypes.TREATMENT_SUPPOTER_ADDRESS);
 		install(PersonAttributeTypes.HOME_BASED_CARE_PROVIDER);
-
-
-
-
+		
 	}
 	
 }
