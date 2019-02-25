@@ -79,6 +79,24 @@
                   "cssClasses": [
                     "number", "regex"
                   ]
+                },
+                {
+                  "type": "obs",
+                  "formFieldName": "obs.160540AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "label": "Entry Point",
+                  "widget": {
+                    "providerName": "southsudanemr",
+                    "fragmentId": "field/entryPoint"
+                  }
+                },
+                {
+                  "type": "obs",
+                  "formFieldName": "obs.160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "label": "Other",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
                 }
               ]
             },

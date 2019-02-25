@@ -1,9 +1,8 @@
 <p>
     <label>
         ${config.label}
-        <span>(${ ui.message("emr.formValidation.messages.requiredField.label") })</span>
     </label>
-    <select name="${config.formFieldName}">
+    <select name="${config.formFieldName}" size="10">
         <option value="">Select One</option>
         <option value ="160539AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">1 - VCT</option>
         <option value ="160541AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">2 - TB Clinic</option>
