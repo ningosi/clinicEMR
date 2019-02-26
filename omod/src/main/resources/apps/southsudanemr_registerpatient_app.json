@@ -23,7 +23,7 @@
       "sections": [
         {
           "id": "demographics",
-          "label": "southsudanemr.registrationapp.otherdetails",
+          "label": "Patient Details",
           "questions": [
             {
               "legend": "Patient Identifiers",
@@ -107,7 +107,7 @@
                 },
                 {
                   "type": "personAttribute",
-                  "label": "Alternative Mobile Number",
+                  "label": "Alternative Mobile No.",
                   "formFieldName": "alternativeMobileNumber",
                   "uuid": "250edff4-38de-11e9-94e6-1fda4e6c49ee",
                   "widget": {
@@ -120,11 +120,16 @@
                   "cssClasses": [
                     "number", "regex"
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "legend": "Entry Point",
+              "fields": [
                 {
                   "type": "obs",
+                  "label": "EntryPoint",
                   "formFieldName": "obs.160540AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "label": "Entry Point",
                   "widget": {
                     "providerName": "southsudanemr",
                     "fragmentId": "field/entryPoint"
