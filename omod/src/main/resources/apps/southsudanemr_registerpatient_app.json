@@ -26,6 +26,46 @@
           "label": "Patient Details",
           "questions": [
             {
+              "legend": "Patient Identifiers",
+              "fields": [
+                {
+                  "type": "patientIdentifier",
+                  "label": "Unique ART No.",
+                  "formFieldName": "uniqueARTNo",
+                  "uuid": "5a580b6a-3508-11e9-aba5-dbb924006cb7",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "id": "uniqueARTNo",
+                      "regex": "^[0-9]"
+                    }
+                  },
+                  "cssClasses": [
+                    "regex"
+                  ]
+                },
+                {
+                  "type": "patientIdentifier",
+                  "label": "HIV Exposed Infant No.",
+                  "formFieldName": "heiNo",
+                  "uuid": "4fcb62cc-3509-11e9-8c1e-73e323400228",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "id": "heiNo",
+                      "regex": "^[0-9]"
+                    }
+                  },
+                  "cssClasses": [
+                    "regex"
+                  ]
+                }
+              ]
+            },
+            {
+
               "legend": "Address & Contacts",
               "fields": [
                 {
@@ -165,46 +205,8 @@
                   }
                 }
               ]
-            },
-            {
-              "legend": "Patient Identifiers",
-              "fields": [
-                {
-                  "type": "patientIdentifier",
-                  "label": "Unique ART No.",
-                  "formFieldName": "uniqueARTNo",
-                  "uuid": "5a580b6a-3508-11e9-aba5-dbb924006cb7",
-                  "widget": {
-                    "providerName": "uicommons",
-                    "fragmentId": "field/text",
-                    "config": {
-                      "id": "uniqueARTNo",
-                      "regex": "^[0-9]"
-                    }
-                  },
-                  "cssClasses": [
-                    "regex"
-                  ]
-                },
-                {
-                  "type": "patientIdentifier",
-                  "label": "HIV Exposed Infant No.",
-                  "formFieldName": "heiNo",
-                  "uuid": "4fcb62cc-3509-11e9-8c1e-73e323400228",
-                  "widget": {
-                    "providerName": "uicommons",
-                    "fragmentId": "field/text",
-                    "config": {
-                      "id": "heiNo",
-                      "regex": "^[0-9]"
-                    }
-                  },
-                  "cssClasses": [
-                    "regex"
-                  ]
-                }
-              ]
             }
+
           ]
         }
       ]
