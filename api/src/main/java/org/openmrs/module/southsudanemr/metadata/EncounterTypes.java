@@ -39,4 +39,22 @@ public class EncounterTypes {
 			return "a0f58114-39dc-11e9-aa78-57fcaf14551d";
 		}
 	};
+	
+	public static EncounterTypeDescriptor ART_DISCONTINUES_ENCOUNTER_TYPE = new EncounterTypeDescriptor() {
+		
+		@Override
+		public String name() {
+			return "ART Discontinuation";
+		}
+		
+		@Override
+		public String description() {
+			return "Used for exiting a patient from the  ART care";
+		}
+		
+		@Override
+		public String uuid() {
+			return "99bc1bf6-3a81-11e9-818d-ebe91c104547";
+		}
+	};
 }
