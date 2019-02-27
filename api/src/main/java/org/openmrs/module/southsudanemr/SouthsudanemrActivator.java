@@ -44,6 +44,7 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		appFrameworkService.disableApp("referenceapplication.vitals");
 		appFrameworkService.disableExtension("referenceapplication.realTime.simpleAdmission");
 		appFrameworkService.disableExtension("referenceapplication.realTime.simpleVisitNote");
+		appFrameworkService.disableExtension("referenceapplication.realTime.vitals");
 		appFrameworkService.disableApp("coreapps.mostRecentVitals");
 		appFrameworkService.disableApp("coreapps.findPatient");
 		
