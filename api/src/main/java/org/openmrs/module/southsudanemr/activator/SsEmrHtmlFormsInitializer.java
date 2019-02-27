@@ -24,7 +24,7 @@ public class SsEmrHtmlFormsInitializer implements SsEmrInitializer {
 	
 	protected static final Log log = LogFactory.getLog(SsEmrHtmlFormsInitializer.class);
 	
-	protected static final String providerName = "mentalhealth";
+	protected static final String providerName = SsEmrConstants.MODULE_ID;
 	
 	protected static final String formsPath = "htmlforms/";
 	
