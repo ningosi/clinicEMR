@@ -2,5 +2,66 @@
           formDescription="Initial form for collecting HIV related information for South Sudan EMR"
           formEncounterType="22cc4ade-39dc-11e9-bd8d-23b7f6ce3c7f"
           formUuid="30d10b9c-39dc-11e9-81c8-f35c2739f664"
-          formVersion="1.0">
+          formVersion="1.0"
+          formAddMetadata="yes"
+          formUILocation="patientDashboard.visitActions"
+          formOrder="1"
+          formIcon="icon-medkit"
+          formShowIf=""
+          formDisplayStyle="Standard"
+          formLabel="HIV Care and ART Card">
+
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+
+    </script>
+    <div id="main-div">
+        <div class="headers" style="text-align: center;">
+            <h3 style="background:  #00b4ef; padding: 10px; color: #fff;">HIV Care and ART Card</h3>
+        </div>
+        <div>
+            Location: <encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/>
+            Provider: <encounterProvider default="currentUser" />
+            Encounter Date :<encounterDate default="now" disallowMultipleEncountersOnDate="block"/>
+        </div>
+        <div>
+            <fieldset>
+                <legend>HIV Testing History</legend>
+
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Personal History</legend>
+
+            </fieldset>
+        </div>
+
+        <div>
+            <ifMode mode="VIEW" include="false">
+                <div class="buttons-container">
+                    <div id="buttons">
+                        <submit submitClass="confirm right" submitCode="general.save"/>
+                        <button type="button" class="cancel">
+                            <uimessage code="general.cancel"/>
+                        </button>
+                    </div>
+                </div>
+            </ifMode>
+        </div>
+        <enrollInProgram programId="5278a71c-3a6a-11e9-9aee-a7663f537b70"/>
+    </div>
+    <ifMode mode="EDIT" include="false">
+        <lookup complexExpression="
+            #set( $encounter = 0 )
+            #set( $encounter = $fn.latestEncounter('22cc4ade-39dc-11e9-bd8d-23b7f6ce3c7f'))
+            #if( $encounter != 0 )
+                &lt;script type=&quot;text/javascript&quot;>
+                        if (window.location.href.indexOf('/module/htmlformentry/htmlForm.form') == -1) {
+                           window.location.href = window.location.protocol + &quot;//&quot; + window.location.host + &quot;/&quot;+ OPENMRS_CONTEXT_PATH + &quot;/htmlformentryui/htmlform/editHtmlFormWithStandardUi.page?patientId=$encounter.patient.patientId&amp;visitId=$encounter.visit.visitId&amp;formUuid=7b0abbe2-98ab-4ba3-a423-e2441859f976&amp;encounterId=$encounter.encounterId&amp;returnUrl=%2F&quot; + OPENMRS_CONTEXT_PATH + &quot;%2Fcoreapps%2Fclinicianfacing%2Fpatient.page%3FpatientId%3D$encounter.patient.patientId&quot;;
+                        }
+                &lt;/script>
+            #end"/>
+    </ifMode>
 </htmlform>
