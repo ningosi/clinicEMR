@@ -31,8 +31,7 @@ public class SsemrRegisterPatientPageController extends AbstractRegistrationAppP
 	        @SpringBean("appFrameworkService") AppFrameworkService appFrameworkService, UiUtils ui) throws Exception {
 		
 		sessionContext.requireAuthentication();
-		addModelAttributes(model, patient, app, emrApiProperties.getPrimaryIdentifierType(), breadcrumbOverride,
-		    appFrameworkService);
+		addModelAttributes(model, patient, app, null, breadcrumbOverride, appFrameworkService);
 	}
 	
 	public void addModelAttributes(PageModel model, Patient patient, AppDescriptor app,

@@ -231,7 +231,7 @@
         <appframeworkVersion>2.2.1</appframeworkVersion>
         <appuiVersion>1.7</appuiVersion>
         <calculationVersion>1.2</calculationVersion>
-        <emrapiVersion>1.18</emrapiVersion>
+        <emrapiVersion>1.21.0</emrapiVersion>
         <eventVersion>2.5</eventVersion>
         <formentryappVersion>1.4.1</formentryappVersion>
         <formfilterVersion>1.0.0</formfilterVersion>

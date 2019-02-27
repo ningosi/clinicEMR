@@ -11,16 +11,23 @@ package org.openmrs.module.southsudanemr;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.GlobalProperty;
+import org.openmrs.PatientIdentifierType;
+import org.openmrs.api.AdministrationService;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.BaseModuleActivator;
 import org.openmrs.module.Module;
 import org.openmrs.module.ModuleFactory;
 import org.openmrs.module.appframework.service.AppFrameworkService;
+import org.openmrs.module.emrapi.EmrApiConstants;
 import org.openmrs.module.metadatadeploy.api.MetadataDeployService;
+import org.openmrs.module.metadatamapping.MetadataTermMapping;
+import org.openmrs.module.metadatamapping.api.MetadataMappingService;
 import org.openmrs.module.southsudanemr.activator.SsEmrAppConfigurationInitializer;
 import org.openmrs.module.southsudanemr.activator.SsEmrHtmlFormsInitializer;
 import org.openmrs.module.southsudanemr.activator.SsEmrInitializer;
 import org.openmrs.module.southsudanemr.deploy.SsCommonMetadataBundle;
+import org.openmrs.module.southsudanemr.metadata.PatientIdentifierTypes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +46,8 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		
 		log.info("Starting Southsudanemr");
 		AppFrameworkService appFrameworkService = Context.getService(AppFrameworkService.class);
+		AdministrationService administrationService = Context.getAdministrationService();
+		
 		appFrameworkService.disableApp("referenceapplication.registrationapp.registerPatient");
 		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientDemographics");
 		appFrameworkService.disableApp("referenceapplication.vitals");
@@ -79,6 +88,9 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		for (SsEmrInitializer initializer : getInitializers()) {
 			initializer.started();
 		}
+		
+		// save defined global properties
+		administrationService.saveGlobalProperties(configureGlobalProperties());
 		log.info("South Sudan Module started");
 	}
 	
@@ -117,6 +129,22 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		l.add(new SsEmrAppConfigurationInitializer());
 		l.add(new SsEmrHtmlFormsInitializer());
 		return l;
+	}
+	
+	private List<GlobalProperty> configureGlobalProperties() {
+		List<GlobalProperty> properties = new ArrayList<GlobalProperty>();
+		// The primary identifier type now uses metadata mapping instead of a global property
+		MetadataMappingService metadataMappingService = Context.getService(MetadataMappingService.class);
+		MetadataTermMapping primaryIdentifierTypeMapping = metadataMappingService.getMetadataTermMapping(
+		    EmrApiConstants.EMR_METADATA_SOURCE_NAME, EmrApiConstants.PRIMARY_IDENTIFIER_TYPE);
+		PatientIdentifierType patientId = Context.getPatientService().getPatientIdentifierTypeByUuid(
+		    PatientIdentifierTypes.ART_NUMBER.uuid());
+		
+		if (!patientId.getUuid().equals(primaryIdentifierTypeMapping.getMetadataUuid())) {
+			primaryIdentifierTypeMapping.setMappedObject(patientId);
+			metadataMappingService.saveMetadataTermMapping(primaryIdentifierTypeMapping);
+		}
+		return properties;
 	}
 	
 }
