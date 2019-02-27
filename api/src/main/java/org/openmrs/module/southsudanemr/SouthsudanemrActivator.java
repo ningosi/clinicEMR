@@ -17,7 +17,13 @@ import org.openmrs.module.Module;
 import org.openmrs.module.ModuleFactory;
 import org.openmrs.module.appframework.service.AppFrameworkService;
 import org.openmrs.module.metadatadeploy.api.MetadataDeployService;
+import org.openmrs.module.southsudanemr.activator.SsEmrAppConfigurationInitializer;
+import org.openmrs.module.southsudanemr.activator.SsEmrHtmlFormsInitializer;
+import org.openmrs.module.southsudanemr.activator.SsEmrInitializer;
 import org.openmrs.module.southsudanemr.deploy.SsCommonMetadataBundle;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class contains the logic that is run every time this module is either started or shutdown
@@ -31,7 +37,7 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 	 */
 	public void started() {
 		
-		log.info("Started Southsudanemr");
+		log.info("Starting Southsudanemr");
 		AppFrameworkService appFrameworkService = Context.getService(AppFrameworkService.class);
 		appFrameworkService.disableApp("referenceapplication.registrationapp.registerPatient");
 		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientDemographics");
@@ -54,6 +60,11 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		appFrameworkService.disableApp("coreapps.conditionlist");
 		appFrameworkService.disableApp("reportingui.reports");
 		appFrameworkService.disableApp("coreapps.relationships");
+		appFrameworkService.disableApp("appointmentschedulingui.schedulingAppointmentApp");
+		appFrameworkService.disableApp("appointmentschedulingui.requestAppointmentApp");
+		appFrameworkService.disableExtension("appointmentschedulingui.tab");
+		appFrameworkService
+		        .disableExtension("org.openmrs.module.appointmentschedulingui.firstColumnFragments.patientDashboard.patientAppointments");
 		
 		MetadataDeployService deployService = Context.getService(MetadataDeployService.class);
 		try {
@@ -61,6 +72,10 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		}
 		catch (Exception ex) {
 			throw new RuntimeException("Failed to setup initial data", ex);
+		}
+		//load the initializers here to install components
+		for (SsEmrInitializer initializer : getInitializers()) {
+			initializer.started();
 		}
 		log.info("South Sudan Module started");
 	}
@@ -70,6 +85,17 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 	 */
 	public void shutdown() {
 		log.info("Shutdown Southsudanemr");
+	}
+	
+	/**
+	 * @see
+	 */
+	public void willStop() {
+		// run the initializers
+		for (SsEmrInitializer initializer : getInitializers()) {
+			initializer.stopped();
+		}
+		log.info("Stopping South sudan Configurations Module");
 	}
 	
 	private void installCommonMetadata(MetadataDeployService deployService) {
@@ -82,6 +108,13 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 			ModuleFactory.stopModule(mod);
 			throw new RuntimeException("Failed to install the common metadata ", e);
 		}
+	}
+	
+	private List<SsEmrInitializer> getInitializers() {
+		List<SsEmrInitializer> l = new ArrayList<SsEmrInitializer>();
+		l.add(new SsEmrAppConfigurationInitializer());
+		l.add(new SsEmrHtmlFormsInitializer());
+		return l;
 	}
 	
 }

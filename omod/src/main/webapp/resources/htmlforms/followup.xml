@@ -1,5 +1,5 @@
-<htmlform formName="Follow up"
-          formDescription="Follow up form field for ssemr"
+<htmlform formName="ART Follow up"
+          formDescription="Follow up form for ssemr"
           formEncounterType="a0f58114-39dc-11e9-aa78-57fcaf14551d"
           formUuid="abad4646-39dc-11e9-b5b3-dfc80b4ed66b"
           formVersion="1.0">

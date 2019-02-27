@@ -7,7 +7,7 @@
 	<name>${project.parent.name}</name>
 	<version>${project.parent.version}</version>
 	<package>org.openmrs.module.southsudanemr</package>
-	<author>kmurumba</author>
+	<author>IntelliSOFT</author>
 	<description>
 			${project.parent.description}
 	</description>
@@ -22,7 +22,6 @@
 	<require_modules>
 		<require_module version="${appframeworkVersion}">org.openmrs.module.appframework</require_module>
 		<require_module>org.openmrs.module.htmlformentry</require_module>
-		<!--<require_module>org.openmrs.module.metadatadeploy</require_module>-->
 		<require_module>org.openmrs.module.uiframework</require_module>
 		<require_module>org.openmrs.module.reporting</require_module>
 		<require_module version="${formentryappVersion}">org.openmrs.module.formentryapp</require_module>
@@ -37,6 +36,9 @@
 		<require_module version="${metadatamappingVersion}">org.openmrs.module.metadatamapping</require_module>
 		<require_module>org.openmrs.module.registrationapp</require_module>
 		<require_module>org.openmrs.module.registrationcore</require_module>
+		<require_module version="${formentryappVersion}">org.openmrs.module.formentryapp</require_module>
+		<require_module version="${htmlformentryuiVersion}">org.openmrs.module.htmlformentryui</require_module>
+
 	</require_modules>
 	
 	<!-- Extensions -->

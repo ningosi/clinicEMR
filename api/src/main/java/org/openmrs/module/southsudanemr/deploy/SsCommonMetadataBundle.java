@@ -1,8 +1,10 @@
 package org.openmrs.module.southsudanemr.deploy;
 
 import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
+import org.openmrs.module.southsudanemr.metadata.EncounterTypes;
 import org.openmrs.module.southsudanemr.metadata.PatientIdentifierTypes;
 import org.openmrs.module.southsudanemr.metadata.PersonAttributeTypes;
+import org.openmrs.module.southsudanemr.metadata.ProgramTypes;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -23,6 +25,13 @@ public class SsCommonMetadataBundle extends AbstractMetadataBundle {
 		install(PersonAttributeTypes.HOME_BASED_CARE_PROVIDER);
 		install(PersonAttributeTypes.VILLAGE);
 		install(PersonAttributeTypes.LAND_MARK);
+		
+		//install encounter types
+		install(EncounterTypes.ART_INITIAL_ENCOUNTER_TYPE);
+		install(EncounterTypes.ART_FOLLOW_UP_ENCOUNTER_TYPE);
+		
+		//install programs
+		install(ProgramTypes.MH_PROGRAM);
 		
 	}
 	
