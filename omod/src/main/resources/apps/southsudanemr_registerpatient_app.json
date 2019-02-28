@@ -26,41 +26,6 @@
           "label": "Patient Details",
           "questions": [
             {
-              "legend": "Registrant Information",
-              "fields": [
-                {
-                  "type": "personAttribute",
-                  "label": "Health Facility",
-                  "formFieldName": "healthFacility",
-                  "uuid": "9f5e75e0-3a86-11e9-876d-efa2492232d9",
-                  "widget": {
-                    "providerName": "southsudanemr",
-                    "fragmentId": "field/healthFacility"
-                  }
-                },
-                {
-                  "type": "personAttribute",
-                  "label": "Today's Date",
-                  "formFieldName": "todaysDate",
-                  "uuid": "a862d0b4-3a86-11e9-a1eb-3fa859d35edf",
-                  "widget": {
-                    "providerName": "uicommons",
-                    "fragmentId": "field/text"
-                  }
-                },
-                {
-                  "type": "personAttribute",
-                  "label": "Individual Registering Patient",
-                  "formFieldName": "individualRegistering",
-                  "uuid": "d824c19a-3a86-11e9-b8ed-ef3eb7cd097b",
-                  "widget": {
-                    "providerName": "uicommons",
-                    "fragmentId": "field/text"
-                  }
-                }
-              ]
-            },
-            {
               "legend": "Patient Identifiers",
               "fields": [
                 {
@@ -97,6 +62,41 @@
                   "cssClasses": [
                     "regex"
                   ]
+                }
+              ]
+            },
+            {
+              "legend": "Registrant Information",
+              "fields": [
+                {
+                  "type": "personAttribute",
+                  "label": "Health Facility",
+                  "formFieldName": "healthFacility",
+                  "uuid": "9f5e75e0-3a86-11e9-876d-efa2492232d9",
+                  "widget": {
+                    "providerName": "southsudanemr",
+                    "fragmentId": "field/healthFacility"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Today's Date",
+                  "formFieldName": "todaysDate",
+                  "uuid": "a862d0b4-3a86-11e9-a1eb-3fa859d35edf",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Individual Registering Patient",
+                  "formFieldName": "individualRegistering",
+                  "uuid": "d824c19a-3a86-11e9-b8ed-ef3eb7cd097b",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
                 }
               ]
             },
