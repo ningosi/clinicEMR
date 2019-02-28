@@ -146,6 +146,26 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 			primaryIdentifierTypeMapping.setMappedObject(patientId);
 			metadataMappingService.saveMetadataTermMapping(primaryIdentifierTypeMapping);
 		}
+		// set the name of the application
+		properties.add(new GlobalProperty("application.name", "SouthSudanEMR - South Sudan eHealth Solution"));
+		// Remove the regular expression to validate names
+		properties.add(new GlobalProperty("patient.nameValidationRegex", ""));
+		// the search mode for patients to enable searching any part of names rather than the beginning
+		properties.add(new GlobalProperty("patientSearch.matchMode", "ANYWHERE"));
+		// enable searching on parts of the patient identifier
+		// the prefix and suffix provide a % round the entered search term with a like
+		properties.add(new GlobalProperty("patient.identifierPrefix", "%"));
+		properties.add(new GlobalProperty("patient.identifierSuffix", "%"));
+		
+		// the RegeX and Search patterns should be empty so that the prefix and suffix matching above can work
+		properties.add(new GlobalProperty("patient.identifierRegex", ""));
+		properties.add(new GlobalProperty("patient.identifierSearchPattern", ""));
+		// disable the appointmentshedulingui which currently has issues
+		properties.add(new GlobalProperty("appointmentschedulingui.started", "false"));
+		// the name of the custom registration app
+		properties.add(new GlobalProperty("registrationapp.customRegistrationAppId", "southsudanemr.registerPatient"));
+		// enable the register patient button to appear on the search widget
+		properties.add(new GlobalProperty("coreapps.showRegisterPatientOnSearchWidget", "true"));
 		return properties;
 	}
 	
