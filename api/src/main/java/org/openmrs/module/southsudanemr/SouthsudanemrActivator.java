@@ -75,9 +75,11 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		appFrameworkService.disableExtension("appointmentschedulingui.tab");
 		appFrameworkService
 		        .disableExtension("org.openmrs.module.appointmentschedulingui.firstColumnFragments.patientDashboard.patientAppointments");
-		appFrameworkService.disableExtension("allergyui.patientDashboard.secondColumnFragments");
+		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientContactInfo");
+		appFrameworkService.disableExtension("org.openmrs.module.allergyui.patientDashboard.secondColumnFragments");
 		
 		MetadataDeployService deployService = Context.getService(MetadataDeployService.class);
+		
 		try {
 			installCommonMetadata(deployService);
 		}
