@@ -173,6 +173,32 @@
                 <version>${eventVersion}</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>formentryapp-omod</artifactId>
+                <version>${formentryappVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>htmlformentryui-api</artifactId>
+                <version>${htmlformentryuiVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>htmlformentry-api</artifactId>
+                <version>${htmlformentryVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>htmlformentry-api-1.10</artifactId>
+                <version>${htmlformentryVersion}</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -205,7 +231,7 @@
         <appframeworkVersion>2.2.1</appframeworkVersion>
         <appuiVersion>1.7</appuiVersion>
         <calculationVersion>1.2</calculationVersion>
-        <emrapiVersion>1.18</emrapiVersion>
+        <emrapiVersion>1.21.0</emrapiVersion>
         <eventVersion>2.5</eventVersion>
         <formentryappVersion>1.4.1</formentryappVersion>
         <formfilterVersion>1.0.0</formfilterVersion>
