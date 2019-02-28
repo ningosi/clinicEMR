@@ -84,8 +84,8 @@
                   "formFieldName": "todaysDate",
                   "uuid": "a862d0b4-3a86-11e9-a1eb-3fa859d35edf",
                   "widget": {
-                    "providerName": "uicommons",
-                    "fragmentId": "field/text"
+                    "providerName": "southsudanemr",
+                    "fragmentId": "field/date"
                   }
                 },
                 {
