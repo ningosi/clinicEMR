@@ -21,13 +21,16 @@
             <h3 style="background:  #00b4ef; padding: 10px; color: #fff;">HIV Care and ART Card</h3>
         </div>
         <div>
-            <table>
-                <tr>
-                    <td>Health Facility Name: <encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/></td>
-                    <td>Name of individual registering patient: <encounterProvider default="currentUser" /></td>
-                    <td>Date :<encounterDate default="now" disallowMultipleEncountersOnDate="block"/></td>
-                </tr>
-            </table>
+            <fieldset>
+            <legend>Encounter Details</legend>
+                <table>
+                    <tr>
+                        <td>Health Facility Name: <encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/></td>
+                        <td>Name of individual registering patient: <encounterProvider default="currentUser" /></td>
+                        <td>Date :<encounterDate default="now" disallowMultipleEncountersOnDate="block"/></td>
+                    </tr>
+                </table>
+            </fieldset>
 
 
 
@@ -40,11 +43,11 @@
                         <td>
                             Date first tested HIV+ :<obs conceptId="160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
                         </td>
-                        <td>Place:<obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+                        <td colspan="2">Place:<obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
                     </tr>
                     <tr>
                         <td>Entry point:<obs conceptId="160540AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
-                        <td>Other:<obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+                        <td colspan="2">Other:<obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
                     </tr>
                 </table>
 
