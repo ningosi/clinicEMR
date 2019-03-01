@@ -5,7 +5,7 @@
     "order": 10,
     "extensionPoints": [
       {
-        "id": "org.openmrs.module.southsudanemr.reports.overview",
+        "id": "org.openmrs.module.southsudanemr.reports.daily",
         "description": "Links to available Facility level Reports",
         "supportedExtensionTypes": [ "link" ]
       },
@@ -29,6 +29,14 @@
         "url": "southsudanemr/reports.page",
         "icon": "icon-book",
         "order": 110
+      },
+      {
+        "id": "appointment.daily",
+        "extensionPointId": "org.openmrs.module.southsudanemr.reports.daily",
+        "type": "link",
+        "label": "Appointments Today",
+        "url": "reportingui/runReport.page?reportDefinition=eaceb9a2-3c0e-11e9-ba7f-d3c5189e6a0b",
+        "order": 5
       }
       ]
   }

@@ -2,7 +2,7 @@
     ui.decorateWith("appui", "standardEmrPage")
     ui.includeCss("reportingui", "reportsapp/home.css")
     def appFrameworkService = context.getService(context.loadClass("org.openmrs.module.appframework.service.AppFrameworkService"))
-    def overview = appFrameworkService.getExtensionsForCurrentUser("org.openmrs.module.southsudanemr.reports.overview")
+    def daily = appFrameworkService.getExtensionsForCurrentUser("org.openmrs.module.southsudanemr.reports.daily")
     def monthly = appFrameworkService.getExtensionsForCurrentUser("org.openmrs.module.southsudanemr.reports.monthly")
     def registers = appFrameworkService.getExtensionsForCurrentUser("org.openmrs.module.southsudanemr.reports.registers")
     def contextModel = [:]
@@ -26,7 +26,7 @@
 <h2>South Sudan Reports</h2>
 <div class="dashboard clear">
     <div class="info-container column">
-        <% if (overview) { %>
+        <% if (daily) { %>
         <div class="info-section">
             <div class="info-header"><h3>Facility Reports</h3></div>
 
