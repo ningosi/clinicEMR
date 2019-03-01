@@ -48,7 +48,7 @@ public class DailyAppointments extends SsEmrDataExportManager {
 		rd.setDescription(getDescription());
 		rd.setParameters(getParameters());
 		
-		rd.addDataSetDefinition("A", Mapped.mapStraightThrough(appointmentDateset.constructAppointmentDatset()));
+		rd.addDataSetDefinition("A", Mapped.mapStraightThrough(appointmentDateset.constructAppointmentDataset()));
 		
 		return rd;
 	}
