@@ -199,6 +199,26 @@
                 <version>${htmlformentryVersion}</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>reporting-api</artifactId>
+                <version>${reportingVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>serialization.xstream-api</artifactId>
+                <version>${serializationVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>calculation-api</artifactId>
+                <version>${calculationVersion}</version>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -243,9 +263,9 @@
         <metadatasharingVersion>1.2.2</metadatasharingVersion>
         <metadatamappingVersion>1.3.2</metadatamappingVersion>
         <providermanagementVersion>2.6.0</providermanagementVersion>
-        <reportingVersion>0.9.9</reportingVersion>
+        <reportingVersion>1.13.0</reportingVersion>
         <reportingCompatibilityVersion>1.5.8</reportingCompatibilityVersion>
-        <serialization.xstreamVersion>0.2.10</serialization.xstreamVersion>
+        <serializationVersion>0.2.12</serializationVersion>
         <uiframeworkVersion>3.9</uiframeworkVersion>
         <uicommonsVersion>2.4.0</uicommonsVersion>
         <uilibraryVersion>1.5.0</uilibraryVersion>

@@ -28,6 +28,7 @@ import org.openmrs.module.southsudanemr.activator.SsEmrHtmlFormsInitializer;
 import org.openmrs.module.southsudanemr.activator.SsEmrInitializer;
 import org.openmrs.module.southsudanemr.deploy.SsCommonMetadataBundle;
 import org.openmrs.module.southsudanemr.metadata.PatientIdentifierTypes;
+import org.openmrs.module.southsudanemr.reporting.SsEmrReportInitializer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -130,6 +131,7 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		List<SsEmrInitializer> l = new ArrayList<SsEmrInitializer>();
 		l.add(new SsEmrAppConfigurationInitializer());
 		l.add(new SsEmrHtmlFormsInitializer());
+		l.add(new SsEmrReportInitializer());
 		return l;
 	}
 	
