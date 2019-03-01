@@ -32,7 +32,7 @@
 
             <div class="info-body">
                 <ul>
-                    <% overview.each { %>
+                    <% daily.each { %>
                     <li>
                         ${ui.includeFragment("uicommons", "extension", [extension: it, contextModel: contextModel])}
                     </li>
