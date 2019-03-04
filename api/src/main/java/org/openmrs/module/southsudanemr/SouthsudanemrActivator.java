@@ -28,6 +28,7 @@ import org.openmrs.module.southsudanemr.activator.SsEmrHtmlFormsInitializer;
 import org.openmrs.module.southsudanemr.activator.SsEmrInitializer;
 import org.openmrs.module.southsudanemr.deploy.SsCommonMetadataBundle;
 import org.openmrs.module.southsudanemr.metadata.PatientIdentifierTypes;
+import org.openmrs.module.southsudanemr.reporting.SsEmrReportInitializer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,9 +76,11 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		appFrameworkService.disableExtension("appointmentschedulingui.tab");
 		appFrameworkService
 		        .disableExtension("org.openmrs.module.appointmentschedulingui.firstColumnFragments.patientDashboard.patientAppointments");
-		appFrameworkService.disableExtension("allergyui.patientDashboard.secondColumnFragments");
+		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientContactInfo");
+		appFrameworkService.disableExtension("org.openmrs.module.allergyui.patientDashboard.secondColumnFragments");
 		
 		MetadataDeployService deployService = Context.getService(MetadataDeployService.class);
+		
 		try {
 			installCommonMetadata(deployService);
 		}
@@ -128,6 +131,7 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		List<SsEmrInitializer> l = new ArrayList<SsEmrInitializer>();
 		l.add(new SsEmrAppConfigurationInitializer());
 		l.add(new SsEmrHtmlFormsInitializer());
+		l.add(new SsEmrReportInitializer());
 		return l;
 	}
 	
@@ -144,6 +148,26 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 			primaryIdentifierTypeMapping.setMappedObject(patientId);
 			metadataMappingService.saveMetadataTermMapping(primaryIdentifierTypeMapping);
 		}
+		// set the name of the application
+		properties.add(new GlobalProperty("application.name", "SouthSudanEMR - South Sudan eHealth Solution"));
+		// Remove the regular expression to validate names
+		properties.add(new GlobalProperty("patient.nameValidationRegex", ""));
+		// the search mode for patients to enable searching any part of names rather than the beginning
+		properties.add(new GlobalProperty("patientSearch.matchMode", "ANYWHERE"));
+		// enable searching on parts of the patient identifier
+		// the prefix and suffix provide a % round the entered search term with a like
+		properties.add(new GlobalProperty("patient.identifierPrefix", "%"));
+		properties.add(new GlobalProperty("patient.identifierSuffix", "%"));
+		
+		// the RegeX and Search patterns should be empty so that the prefix and suffix matching above can work
+		properties.add(new GlobalProperty("patient.identifierRegex", ""));
+		properties.add(new GlobalProperty("patient.identifierSearchPattern", ""));
+		// disable the appointmentshedulingui which currently has issues
+		properties.add(new GlobalProperty("appointmentschedulingui.started", "false"));
+		// the name of the custom registration app
+		properties.add(new GlobalProperty("registrationapp.customRegistrationAppId", "southsudanemr.registerPatient"));
+		// enable the register patient button to appear on the search widget
+		properties.add(new GlobalProperty("coreapps.showRegisterPatientOnSearchWidget", "true"));
 		return properties;
 	}
 	
