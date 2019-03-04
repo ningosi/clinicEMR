@@ -4,7 +4,9 @@ import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
 import org.openmrs.module.southsudanemr.metadata.EncounterTypes;
 import org.openmrs.module.southsudanemr.metadata.PatientIdentifierTypes;
 import org.openmrs.module.southsudanemr.metadata.PersonAttributeTypes;
+import org.openmrs.module.southsudanemr.metadata.Privileges;
 import org.openmrs.module.southsudanemr.metadata.ProgramTypes;
+import org.openmrs.module.southsudanemr.metadata.Roles;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -33,6 +35,11 @@ public class SsCommonMetadataBundle extends AbstractMetadataBundle {
 		
 		//install programs
 		install(ProgramTypes.MH_PROGRAM);
+		
+		//install privileges
+		install(Privileges.APP_SSEMRREPORTS_PRV);
+		//install roles here
+		install(Roles.SS_USERS);
 		
 	}
 	

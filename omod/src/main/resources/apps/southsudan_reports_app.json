@@ -28,7 +28,8 @@
         "label": "SouthSudanEMR Reports",
         "url": "southsudanemr/reports.page",
         "icon": "icon-book",
-        "order": 110
+        "order": 110,
+        "requiredPrivilege": "App: southsudanemr.viewReports"
       },
       {
         "id": "appointment.daily",
