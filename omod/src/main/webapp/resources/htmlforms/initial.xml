@@ -22,16 +22,21 @@
         </div>
         <div>
             <fieldset>
-            <legend>Encounter Details</legend>
+                <legend>Encounter Details</legend>
                 <table>
                     <tr>
-                        <td>Health Facility Name: <encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/></td>
-                        <td>Name of individual registering patient: <encounterProvider default="currentUser" /></td>
-                        <td>Date :<encounterDate default="now" disallowMultipleEncountersOnDate="block"/></td>
+                        <td>Health Facility Name:
+                            <encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/>
+                        </td>
+                        <td>Name of individual registering patient:
+                            <encounterProvider default="currentUser"/>
+                        </td>
+                        <td>Date :
+                            <encounterDate default="now" disallowMultipleEncountersOnDate="block"/>
+                        </td>
                     </tr>
                 </table>
             </fieldset>
-
 
 
         </div>
@@ -41,22 +46,74 @@
                 <table>
                     <tr>
                         <td>
-                            Date first tested HIV+ :<obs conceptId="160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                            Date first tested HIV+ :
+                            <obs conceptId="160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
                         </td>
-                        <td colspan="2">Place:<obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+                        <td colspan="2">Place:
+                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Entry point:<obs conceptId="160540AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
-                        <td colspan="2">Other:<obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+                        <td>Entry point:
+                            <obs conceptId="160540AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                        <td colspan="2">Other:
+                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Date of HIV Re-testing before ART :
+                            <obs conceptId="160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                        <td colspan="2">Place:
+                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Date of HIV Re-testing before ART :
+                            <obs conceptId="160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                        <td colspan="2">Name of Clinic:
+                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                        <td>
+                            Date Transfered In :
+                            <obs conceptId="160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
                     </tr>
                 </table>
-
 
             </fieldset>
         </div>
         <div>
             <fieldset>
                 <legend>Personal History</legend>
+                <table>
+                    <tr>
+                        <td>
+                            Literate?:
+                            <obs conceptId="159400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                        <td>
+                            Educational Level:
+                            <obs conceptId="1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            Alcohol Intake?
+                            <obs conceptId="159449"
+                                 answerConceptIds="159450,1090"
+                                 answerLabels="Habitual,Not Used"/>
+                        </td>
+                        <td colspan="2">
+                            Drug Allergies:
+                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                    </tr>
+                </table>
 
             </fieldset>
         </div>
