@@ -26,13 +26,13 @@
                 <table>
                     <tr>
                         <td>Health Facility Name:
-                            <encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/>
+                            <encounterLocation default="SessionAttribute:emrContext.sessionLocationId" />
                         </td>
                         <td>Name of individual registering patient:
-                            <encounterProvider default="currentUser"/>
+                            <encounterProvider default="currentUser" />
                         </td>
                         <td>Date :
-                            <encounterDate default="now" disallowMultipleEncountersOnDate="block"/>
+                            <encounterDate default="now" disallowMultipleEncountersOnDate="block" />
                         </td>
                     </tr>
                 </table>
@@ -47,29 +47,32 @@
                     <tr>
                         <td>
                             Date first tested HIV+ :
-                            <obs conceptId="160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                            <obs conceptId="160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
                         </td>
                         <td colspan="2">Place:
-                            <obs conceptId="161549AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                            <obs conceptId="161549AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
                         </td>
                     </tr>
                     <tr>
                         <td>Entry point:
                             <obs conceptId="160540AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                  answerConceptIds="160539AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160539AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160546AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160457AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159938AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159938AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                 answerLabels="VCT, TB Clinic, STI Clinic, In-patient, Pediatric, OPD,Index Testing, Nutrition, Other(Specify)"/>
+                                 answerLabels="VCT, TB Clinic, STI Clinic, In-patient, Pediatric, OPD,Index Testing, Nutrition, Other(Specify)" />
                         </td>
                         <td colspan="2">Other:
-                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                            <span class="required">*</span>
+                            <span class="">
+                                <obs id="entryPointDisabled" conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> <!--TODO The concept ID is a placeholder and needs to be removed-->
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Date of HIV Re-testing before ART :
-                            <obs conceptId="160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                            <obs conceptId="160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> <!--TODO The concept ID is a placeholder and needs to be removed-->
                         </td>
                         <td colspan="2">Place:
-                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> <!--TODO The concept ID is a placeholder and needs to be removed-->
                         </td>
                     </tr>
                     <tr>
@@ -77,14 +80,14 @@
                             Transfered in on ART? :
                             <obs conceptId="162703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                  answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                 answerLabels="Yes,No"/>
+                                 answerLabels="Yes,No" />
                         </td>
                         <td colspan="2">Name of Clinic:
-                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> <!--TODO The concept ID is a placeholder and needs to be removed-->
                         </td>
                         <td>
                             Date Transfered In :
-                            <obs conceptId="160534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                            <obs conceptId="160534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
                         </td>
                     </tr>
                 </table>
@@ -99,23 +102,64 @@
                         <td>
                             Literate?:
                             <obs conceptId="159400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                 answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabels="Yes,No"/>
+                                 answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Yes,No" />
                         </td>
                         <td>
                             Educational Level:
-                            <obs conceptId="1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                            <obs conceptId="1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Alcohol Intake?
                             <obs conceptId="159449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                 answerConceptIds="159450AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                 answerLabels="Habitual,Not Used"/>
+                                 answerConceptIds="159450AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Habitual,Social,Not Used" /> <!--TODO The concept ID for Social Option is a placeholder and needs to be removed-->
                         </td>
                         <td colspan="2">
                             Drug Allergies:
-                            <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                            <obs conceptId="160643AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                        </td>
+                    </tr>
+                </table>
+
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Family History</legend>
+                <table>
+                    <tr>
+                        <td>
+                            Marital Status:
+                            <obs conceptId="159400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Yes,No" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Occupation:
+                            <obs conceptId="1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                        </td>
+                        <td colspan="2">Other:
+                            <span class="required">*</span>
+                            <span class="">
+                                <obs id="entryPointDisabled" conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> <!--TODO The concept ID is a placeholder and needs to be removed-->
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Alcohol Intake?
+                            <obs conceptId="159449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="159450AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Habitual,Social,Not Used" /> <!--TODO The concept ID for Social Option is a placeholder and needs to be removed-->
+                        </td>
+                        <td colspan="2">
+                            Drug Allergies:
+                            <obs conceptId="160643AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
                         </td>
                     </tr>
                 </table>
