@@ -94,7 +94,8 @@
                     <tr>
                         <td>
                             Literate?:
-                            <obs conceptId="159400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                            <obs conceptId="159400"
+                            answerConceptIds="1065,1066" answerLabels="Yes,No"/>
                         </td>
                         <td>
                             Educational Level:
@@ -102,7 +103,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3">
+                        <td>
                             Alcohol Intake?
                             <obs conceptId="159449"
                                  answerConceptIds="159450,1090"
