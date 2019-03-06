@@ -74,8 +74,8 @@
                   "formFieldName": "healthFacility",
                   "uuid": "9f5e75e0-3a86-11e9-876d-efa2492232d9",
                   "widget": {
-                    "providerName": "southsudanemr",
-                    "fragmentId": "field/healthFacility"
+                    "providerName": "uicommons",
+                    "fragmentId": "field/location"
                   }
                 },
                 {

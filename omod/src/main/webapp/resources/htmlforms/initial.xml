@@ -226,9 +226,9 @@
                     </tr>
                     <tr>
                         <td>Place:
-                                <obs conceptId="161010AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                answerConceptIds="160479AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160480AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                answerLabels="Private Facility,Government facility"/>
+                            <obs conceptId="161010AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="160479AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160480AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Private Facility,Government facility"/>
                         </td>
                     </tr>
                 </table>
@@ -249,19 +249,62 @@
                     <tbody>
                         <tr>
                             <td>
-                                <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                                <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
                             </td>
                             <td>
-                                <obs conceptId="159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                                <obs conceptId="159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
                             </td>
                             <td>
-                                <obs conceptId="160739AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                                <obs conceptId="160739AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
                             </td>
                             <td>
                                 <a href="#"></a>
                             </td>
                         </tr>
                     </tbody>
+                </table>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Clinical and Laboratory Milestones</legend>
+                <table>
+                    <tr>
+                        <td>
+                            CTX or Dapsone Start Date:
+                            <obs conceptId="164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Date:
+                            <obs conceptId="159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            WHO Stage:
+                            <obs conceptId="5356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Weigth(kgs):
+                            <obs conceptId="5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Height(cm), length for child &lt;2 years:
+                            <obs conceptId="5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           CD4 Count:
+                            <obs conceptId="5497AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                        </td>
+                    </tr>
                 </table>
             </fieldset>
         </div>
