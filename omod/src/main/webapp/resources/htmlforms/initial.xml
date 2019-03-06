@@ -131,37 +131,68 @@
                 <legend>Family History</legend>
                 <table>
                     <tr>
-                        <td>
+                        <td colspan="3">
                             Marital Status:
-                            <obs conceptId="159400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                 answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                 answerLabels="Yes,No" />
+                            <obs conceptId="1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="5615AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159715AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Single,Married Monogamous,Polygamous,Divorced,Widowed, Not Applicable" />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Occupation:
-                            <obs conceptId="1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                            <obs conceptId="1542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                answerConceptIds="123801AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159465AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160295AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159673AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159673AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Unemployed,Student,Housewife,Military,Other Uninformed Forces,Business,Farmer,Other (specify)" /> <!--TODO The concept ID (Military and Other Uniformed Forces) is a placeholder and needs to be removed-->
                         </td>
-                        <td colspan="2">Other:
+                        <td colspan="2">Other(Specify field):
                             <span class="required">*</span>
                             <span class="">
                                 <obs id="entryPointDisabled" conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> <!--TODO The concept ID is a placeholder and needs to be removed-->
                             </span>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            Alcohol Intake?
-                            <obs conceptId="159449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                 answerConceptIds="159450AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                 answerLabels="Habitual,Social,Not Used" /> <!--TODO The concept ID for Social Option is a placeholder and needs to be removed-->
-                        </td>
-                        <td colspan="2">
-                            Drug Allergies:
-                            <obs conceptId="160643AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
-                        </td>
-                    </tr>
+                </table>
+                <legend>General Family Information</legend>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Family Member Name</th>
+                            <th>Age</th>
+                            <th>Sex</th>
+                            <th>HIV Status</th>
+                            <th>On ART</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<repeat>-->
+                            <tr>
+                                <td>
+                                    <obs conceptId="160750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                                </td>
+                                <td>
+                                    <obs conceptId="160751AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                                </td>
+                                <td>
+                                    <obs conceptId="1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                                </td>
+                                <td>
+                                    <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    answerLabels="Positive,Negative,Unknown" />
+                                </td>
+                                <td>
+                                    <obs conceptId="160119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    answerLabels="Yes,No" />
+                                </td>
+                                <td>
+                                    <a href="#" class="add">Add</a> | <a href="#" class="remove">Remove</a>
+                                </td>
+                            </tr>
+                        <!--</repeat>-->
+                    </tbody>
                 </table>
 
             </fieldset>
