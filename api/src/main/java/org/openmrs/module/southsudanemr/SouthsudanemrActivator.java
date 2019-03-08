@@ -103,8 +103,6 @@ public class SouthsudanemrActivator extends BaseModuleActivator {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		//mark all location to be login and visit
-		HealthFacilities.markAllAsLoginLocations();
 		log.info("South Sudan Module started");
 	}
 	

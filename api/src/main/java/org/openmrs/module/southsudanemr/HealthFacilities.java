@@ -42,6 +42,7 @@ public class HealthFacilities {
 						Location newLocation = new Location();
 						newLocation.setName(facility_name);
 						newLocation.setCreator(Context.getAuthenticatedUser());
+						markAllAsLoginLocations(newLocation);
 						locationService.saveLocation(newLocation);
 					}
 				}
@@ -56,8 +57,7 @@ public class HealthFacilities {
 		LocationService locationService = Context.getLocationService();
 		List<String> locationUuid = Arrays.asList("2131aff8-2e2a-480a-b7ab-4ac53250262b",
 		    "b1a8b05e-3542-4037-bbd3-998ee9c40574", "aff27d58-a15c-49a6-9beb-d30dcfc0c66e",
-		    "7fdfa2cb-bc95-405a-88c6-32b7673c0453", "58c57d25-8d39-41ab-8422-108a0c277d98",
-		    "7f65d926-57d6-4402-ae10-a5b3bcbf7986", "6351fcf4-e311-4a19-90f9-35667d99a8af");
+		    "58c57d25-8d39-41ab-8422-108a0c277d98", "6351fcf4-e311-4a19-90f9-35667d99a8af");
 		for (String s : locationUuid) {
 			Location location = locationService.getLocationByUuid(s);
 			if (location != null && !location.isRetired()) {
@@ -70,9 +70,8 @@ public class HealthFacilities {
 		}
 	}
 	
-	public static void markAllAsLoginLocations() {
+	private static void markAllAsLoginLocations(Location location) {
 		LocationService service = Context.getLocationService();
-		List<Location> allLocations = service.getAllLocations();
 		
 		Set<LocationTag> allTags = new HashSet<LocationTag>();
 		allTags.add(service.getLocationTagByName("Login Location"));
@@ -80,11 +79,6 @@ public class HealthFacilities {
 		allTags.add(service.getLocationTagByName("Visit Location"));
 		allTags.add(service.getLocationTagByName("Transfer Location"));
 		allTags.add(service.getLocationTagByName("Admission Location"));
-		
-		for (Location location : allLocations) {
-			location.setTags(allTags);
-			service.saveLocation(location);
-		}
-		
+		location.setTags(allTags);
 	}
 }
