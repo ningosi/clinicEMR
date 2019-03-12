@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class AppointmentDateset extends BaseDataSet {
+public class AppointmentDataset extends BaseDataSet {
 	
 	@Autowired
 	private AppointmentCohortQueries appointmentCohortQueries;
