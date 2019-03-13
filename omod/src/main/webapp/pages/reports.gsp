@@ -13,7 +13,7 @@
         {icon: "icon-home", link: '/' + OPENMRS_CONTEXT_PATH + '/index.htm'},
         {
             label: "${ ui.message("reportingui.reportsapp.home.title") }", link: "${ ui.pageLink("southsudanemr",
-        "reportsHome")
+        "reports")
 }"
         }
     ];
