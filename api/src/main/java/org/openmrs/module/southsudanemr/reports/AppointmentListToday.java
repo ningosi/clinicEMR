@@ -1,9 +1,12 @@
 package org.openmrs.module.southsudanemr.reports;
 
 import org.openmrs.module.reporting.ReportingException;
+import org.openmrs.module.reporting.evaluation.parameter.Mapped;
 import org.openmrs.module.reporting.report.ReportDesign;
 import org.openmrs.module.reporting.report.definition.ReportDefinition;
+import org.openmrs.module.southsudanemr.reporting.library.dataset.AppointmentListTodayDataset;
 import org.openmrs.module.southsudanemr.reporting.manager.SsEmrDataExportManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -13,7 +16,8 @@ import java.util.Properties;
 
 @Component
 public class AppointmentListToday extends SsEmrDataExportManager {
-	
+	@Autowired
+	private AppointmentListTodayDataset appointmentListTodayDataset;
 	@Override
 	public String getExcelDesignUuid() {
 		return "cd8d6894-4568-11e9-a1df-5b05e1c3d58a";
@@ -42,7 +46,7 @@ public class AppointmentListToday extends SsEmrDataExportManager {
 		rd.setDescription(getDescription());
 		rd.setParameters(getParameters());
 		
-		//rd.addDataSetDefinition("T", Mapped.mapStraightThrough(appointmentDateset.constructAppointmentDataset()));
+		rd.addDataSetDefinition("L1", Mapped.mapStraightThrough(appointmentListTodayDataset.constructAppointmentListTodayDataset()));
 		
 		return rd;
 	}
@@ -59,6 +63,7 @@ public class AppointmentListToday extends SsEmrDataExportManager {
 			reportDesign = createXlsReportDesign(reportDefinition, "today.xls", "Today Appointments", getExcelDesignUuid(),
 			    null);
 			Properties props = new Properties();
+			props.put("repeatingSections", "sheet:1,row:5,dataset:L1");
 			props.put("sortWeight", "5000");
 			reportDesign.setProperties(props);
 		}
