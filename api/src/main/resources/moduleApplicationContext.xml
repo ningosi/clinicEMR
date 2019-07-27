@@ -23,18 +23,18 @@
   		    http://www.springframework.org/schema/util
   		    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-    <context:component-scan base-package="org.openmrs.module.southsudanemr" />
+    <context:component-scan base-package="org.openmrs.module.clinicemr" />
 
-    <!-- Wraps SouthsudanemrService methods in DB transactions and OpenMRS interceptors,
+    <!-- Wraps ClinicEmrService methods in DB transactions and OpenMRS interceptors,
     which set audit info like dateCreated, changedBy, etc.-->
-    <bean id="southsudanemr.SouthsudanemrService"
+    <bean id="clinicemr.ClinicEmrService"
             class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
         <property name="transactionManager">
             <ref bean="transactionManager" />
         </property>
         <property name="target">
-            <bean class="org.openmrs.module.southsudanemr.api.impl.SouthsudanemrServiceImpl">
-                <property name="dao" ref="southsudanemr.SouthsudanemrDao" />
+            <bean class="org.openmrs.module.clinicemr.api.impl.ClinicEmrServiceImpl">
+                <property name="dao" ref="clinicemr.ClinicEmrDao" />
             </bean>
         </property>
         <property name="preInterceptors">
@@ -45,13 +45,13 @@
         </property>
     </bean>
 
-    <!-- Adds SouthsudanemrService to OpenMRS context so it can be accessed
-    calling Context.getService(SouthsudanemrService.class) -->
+    <!-- Adds ClinicEmrService to OpenMRS context so it can be accessed
+    calling Context.getService(ClinicEmrService.class) -->
     <bean parent="serviceContext">
         <property name="moduleService">
             <list>
-                <value>org.openmrs.module.southsudanemr.api.SouthsudanemrService</value>
-                <ref bean="southsudanemr.SouthsudanemrService" />
+                <value>org.openmrs.module.clinicemr.api.ClinicEmrService</value>
+                <ref bean="clinicemr.ClinicEmrServiceemr" />
             </list>
         </property>
     </bean>

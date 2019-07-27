@@ -1,0 +1,52 @@
+[
+  {
+    "id": "clinic.reports",
+    "description": "Homepage showing a list of different kinds of reports",
+    "order": 10,
+    "extensionPoints": [
+      {
+        "id": "org.openmrs.module.clinicemr.reports.daily",
+        "description": "Links to available Facility level Reports",
+        "supportedExtensionTypes": [ "link" ]
+      },
+      {
+        "id": "org.openmrs.module.clinicemr.reports.monthly",
+        "description": "Links to available Monthly Reports",
+        "supportedExtensionTypes": [ "link" ]
+      },
+      {
+        "id": "org.openmrs.module.clinicemr.reports.registers",
+        "description": "Links to available Registers",
+        "supportedExtensionTypes": [ "link" ]
+      }
+    ],
+    "extensions": [
+      {
+        "id": "clinicemr.homepageLink",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "ClinicEMR Reports",
+        "url": "clinicemr/reports.page",
+        "icon": "icon-book",
+        "order": 110,
+        "requiredPrivilege": "App: clinicemremr.viewReports"
+      },
+      {
+        "id": "appointment.daily",
+        "extensionPointId": "org.openmrs.module.clinicemremr.reports.daily",
+        "type": "link",
+        "label": "Appointments Today",
+        "url": "reportingui/runReport.page?reportDefinition=4c7033c4-b082-11e9-9ab3-d3f41e90f109",
+        "order": 5
+      },
+      {
+        "id": "list.appointment.today",
+        "extensionPointId": "org.openmrs.module.clinicemremr.reports.registers",
+        "type": "link",
+        "label": "Today's appointment list",
+        "url": "reportingui/runReport.page?reportDefinition=26cdf32c-b082-11e9-b3dd-4b1a4edc5b78",
+        "order": 6
+      }
+      ]
+  }
+]

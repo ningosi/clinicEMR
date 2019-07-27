@@ -3,7 +3,7 @@
     "id" : "${project.parent.groupId}.${project.parent.artifactId}.patientDashboard.summary",
     "extensionPointId" : "patientDashboard.firstColumnFragments",
     "extensionParams" : {
-      "provider" : "southsudanemr",
+      "provider" : "clinicemr",
       "fragment" : "appointmentSummaryWidget"
     }
   }

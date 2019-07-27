@@ -2,9 +2,9 @@
     ui.decorateWith("appui", "standardEmrPage")
     ui.includeCss("reportingui", "reportsapp/home.css")
     def appFrameworkService = context.getService(context.loadClass("org.openmrs.module.appframework.service.AppFrameworkService"))
-    def daily = appFrameworkService.getExtensionsForCurrentUser("org.openmrs.module.southsudanemr.reports.daily")
-    def monthly = appFrameworkService.getExtensionsForCurrentUser("org.openmrs.module.southsudanemr.reports.monthly")
-    def registers = appFrameworkService.getExtensionsForCurrentUser("org.openmrs.module.southsudanemr.reports.registers")
+    def daily = appFrameworkService.getExtensionsForCurrentUser("org.openmrs.module.clinicemr.reports.daily")
+    def monthly = appFrameworkService.getExtensionsForCurrentUser("org.openmrs.module.clinicemr.reports.monthly")
+    def registers = appFrameworkService.getExtensionsForCurrentUser("org.openmrs.module.clinicemr.reports.registers")
     def contextModel = [:]
 %>
 
@@ -12,7 +12,7 @@
     var breadcrumbs = [
         {icon: "icon-home", link: '/' + OPENMRS_CONTEXT_PATH + '/index.htm'},
         {
-            label: "${ ui.message("reportingui.reportsapp.home.title") }", link: "${ ui.pageLink("southsudanemr",
+            label: "${ ui.message("reportingui.reportsapp.home.title") }", link: "${ ui.pageLink("clinicemr",
         "reports")
 }"
         }
@@ -28,7 +28,7 @@
     <div class="info-container column">
         <% if (daily) { %>
         <div class="info-section">
-            <div class="info-header"><h3>Facility Reports - Summaries</h3></div>
+            <div class="info-header"><h3>Clinic Reports - Summaries</h3></div>
 
             <div class="info-body">
                 <ul>
@@ -44,7 +44,7 @@
 
         <% if (registers) { %>
         <div class="info-section">
-            <div class="info-header"><h3>Facility Reports - Patient List</h3></div>
+            <div class="info-header"><h3>Clinic Reports - Patient List</h3></div>
 
             <div class="info-body">
                 <ul>

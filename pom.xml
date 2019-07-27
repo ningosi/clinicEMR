@@ -9,28 +9,27 @@
     </parent>
 
     <groupId>org.openmrs.module</groupId>
-    <artifactId>southsudanemr</artifactId>
+    <artifactId>clinicemr</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Southsudanemr</name>
-    <description>Provide EMR functionality for South Sudan</description>
+    <name>ClinicEMR</name>
+    <description>Provide EMR functionality for clinic EMR</description>
 
     <url>https://wiki.openmrs.org/x/FQ4z</url>
     <developers>
         <developer>
             <name>
-                IntelliSOFT Consulting LTD
+                Nicholas Ingosi Magaja
             </name>
             <url>
-                http://www.intellisoftkenya.com/
             </url>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:openmrs/openmrs-module-southsudanemr.git</connection>
-        <developerConnection>scm:git:git@github.com:openmrs/openmrs-module-southsudanemr.git</developerConnection>
-        <url>https://github.com/openmrs/openmrs-module-southsudanemr/</url>
+        <connection>scm:git:git@github.com:openmrs/openmrs-module-clinicemr.git</connection>
+        <developerConnection>scm:git:git@github.com:openmrs/openmrs-module-clinicemr.git</developerConnection>
+        <url>https://github.com/openmrs/openmrs-module-clinicemr/</url>
         <tag>HEAD</tag>
     </scm>
 

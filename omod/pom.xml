@@ -3,19 +3,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openmrs.module</groupId>
-		<artifactId>southsudanemr</artifactId>
+		<artifactId>clinicemr</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>southsudanemr-omod</artifactId>
+	<artifactId>clinicemr-omod</artifactId>
 	<packaging>jar</packaging>
-	<name>Southsudanemr OMOD</name>
-	<description>Omod submodule for Southsudanemr</description>
+	<name>ClinicEMR OMOD</name>
+	<description>Omod submodule for Clinicemr</description>
 
 	<dependencies>
         <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>southsudanemr-api</artifactId>
+            <artifactId>clinicemr-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 		<dependency>

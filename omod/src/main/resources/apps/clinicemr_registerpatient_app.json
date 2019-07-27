@@ -1,0 +1,128 @@
+[
+  {
+    "id": "clinicemr.registerPatient",
+    "instanceOf": "registrationapp.registerPatient",
+    "label": "Register Patient",
+    "description": "clinicemr.registerpatient.description",
+    "extensions": [
+      {
+        "id": "clinicemr.registerPatient.homepageLink",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "Register Patient",
+        "url": "registrationapp/registerPatient.page?appId=clinicemr.registerPatient",
+        "icon": "icon-user",
+        "order": 1,
+        "requiredPrivilege": "App: registrationapp.registerPatient"
+      }
+    ],
+    "config": {
+      "allowUnknownPatients": false,
+      "allowRetrospectiveEntry": true,
+      "afterCreatedUrl": "/coreapps/clinicianfacing/patient.page?patientId={{patientId}}",
+      "sections": [
+        {
+          "id": "demographics",
+          "label": "Patient Details",
+          "questions": [
+            {
+              "legend": "Patient Identifiers",
+              "fields": [
+                {
+                  "type": "patientIdentifier",
+                  "label": "Patient Clinic Number",
+                  "formFieldName": "clinicNo",
+                  "uuid": "9baf3fba-ad27-11e9-b05d-6f4d50626c9f",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+
+                    }
+                  },
+                  "cssClasses": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "legend": "Next of Kin Information",
+              "fields": [
+                {
+                  "type": "personAttribute",
+                  "label": "Name",
+                  "formFieldName": "nextOfKinName",
+                  "uuid": "7a9d0922-ad29-11e9-8348-a74bf5ee86d9",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Telephone",
+                  "formFieldName": "nextOfKinTelephone",
+                  "uuid": "adda6ae6-ad29-11e9-9417-d398d403ac11",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Email",
+                  "formFieldName": "nextOfKinEmail",
+                  "uuid": "f8fef596-ad29-11e9-a89e-4bb98e2fb278",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                }
+              ]
+            },
+            {
+
+              "legend": "Insurance Details",
+              "fields": [
+                {
+                  "type": "personAttribute",
+                  "label": "Mode of Payment",
+                  "formFieldName": "modeOfPayment",
+                  "uuid": "3379c610-ad2a-11e9-ba2e-ff18f696b139",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Membership Number",
+                  "formFieldName": "memberShipNo",
+                  "uuid": "602c6cda-ad2a-11e9-affb-bf6691a871fe",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Scheme/Employer",
+                  "formFieldName": "schemeEmployer",
+                  "uuid": "9b93757a-ad2a-11e9-999c-ffbc043e0e08",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+
+                  }
+                }
+
+              ]
+            }
+
+          ]
+        }
+      ]
+    }
+  }
+]

@@ -95,7 +95,7 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
             <% if (section.id == 'demographics') { %>
 
             <fieldset id="demographics-name">
-                <legend>${ui.message("southsudanemr.patient.information")}</legend>
+                <legend>${ui.message("clinicemr.patient.information")}</legend>
                 <h3>${ui.message("registrationapp.patient.name.question")}</h3>
                 <% nameTemplate.lines.each { line ->
                     // go through each line in the template and find the first name token; assumption is there is only one name token per line
@@ -118,7 +118,7 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
 
                 <% } %>
             <br />
-            <h3>${ui.message("southsudanemr.gender")}</h3>
+            <h3>${ui.message("clinicemr.gender")}</h3>
             ${ ui.includeFragment("uicommons", "field/dropDown", [
                     label: ui.message("registrationapp.patient.gender.question"),
                     emptyOptionLabel: "uicommons.select",
@@ -129,7 +129,7 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
                     hideEmptyLabel: true,
                     expanded: true
             ])}
-            <h3>${ui.message("southsudanemr.birthdate")}</h3>
+            <h3>${ui.message("clinicemr.birthdate")}</h3>
             ${ ui.includeFragment("uicommons", "field/multipleInputDate", [
                     label: "",
                     formFieldName: "birthdate",
