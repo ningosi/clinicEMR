@@ -51,7 +51,7 @@
         <property name="moduleService">
             <list>
                 <value>org.openmrs.module.clinicemr.api.ClinicEmrService</value>
-                <ref bean="clinicemr.ClinicEmrServiceemr" />
+                <ref bean="clinicemr.ClinicEmrService" />
             </list>
         </property>
     </bean>

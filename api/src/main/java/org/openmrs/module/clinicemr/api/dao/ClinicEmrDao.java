@@ -16,7 +16,7 @@ import org.openmrs.module.clinicemr.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-@Repository("southsudanemr.SouthsudanemrDao")
+@Repository("clinicemr.ClinicEmrDao")
 public class ClinicEmrDao {
 	
 	@Autowired
