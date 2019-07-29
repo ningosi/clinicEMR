@@ -55,49 +55,52 @@
             <div class="headers" style="text-align: center;">
                 <h3 style="background:  #00b4ef; padding: 10px; color: #fff;">Consultations Form</h3>
             </div>
-            <div>
-                <fieldset>
-                    <legend>Encounter Details</legend>
-                    <table>
-                        <tr>
-                            <td>Point of consultations:
-                                <encounterLocation default="SessionAttribute:emrContext.sessionLocationId" />
-                            </td>
-                            <td>Name of individual attending to the  patient:
-                                <encounterProvider default="currentUser"/>
-                            </td>
-                            <td>Date of Consultations:
-                                <encounterDate default="now" />
-                            </td>
-                        </tr>
-                    </table>
-                </fieldset>
-            </div>
-            <div>
-                <ifMode mode="VIEW" include="false">
-                    <div class="buttons-container">
-                        <div id="buttons">
-                            <submit submitClass="confirm right" submitCode="general.save"/>
-                            <button type="button" class="cancel">
-                                <uimessage code="general.cancel"/>
-                            </button>
-                        </div>
-                    </div>
-                </ifMode>
+            <div id="who-when-where">
+                <p id="who">
+                    <label>Name of individual attending to the patient</label>
+                    <span><encounterProvider default="currentUser" required="true"  /></span>
+                </p>
+                <p id="when">
+                    <label>Point of consultation</label>
+                    <span><encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/></span>
+                </p>
+                <p id="where">
+                    <label>Date of Consultation</label>
+                    <span><encounterDate id="encounterDate" default="now" /></span>
+                </p>
             </div>
         </div>
     </ifMode>
-    <div id="data-collection">
+    <di>
+        <div id="data-collection">
 
-        <encounterDiagnoses required="true" selectedDiagnosesTarget="#encounter-diagnoses-target"/>
+            <encounterDiagnoses required="true" selectedDiagnosesTarget="#encounter-diagnoses-target"/>
 
+            <p>
+                <label><uimessage code="coreapps.consult.freeTextComments"/></label>
+                <obs conceptId="CIEL:162169" style="textarea" rows="5"/>
+            </p>
+
+        </div>
+
+        <div id="encounter-diagnoses-target"> </div>
+    </di>
+    <div>
         <p>
-            <label><uimessage code="coreapps.consult.freeTextComments"/></label>
-            <obs conceptId="CIEL:162169" style="textarea" rows="5"/>
+            <label>Next appointment Date</label>
+            <obs conceptId="5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" allowFutureDates="true" />
         </p>
-
     </div>
-
-    <div id="encounter-diagnoses-target">
+    <div>
+        <ifMode mode="VIEW" include="false">
+            <div class="buttons-container">
+                <div id="buttons">
+                    <submit submitClass="confirm right" submitCode="general.save"/>
+                    <button type="button" class="cancel">
+                        <uimessage code="general.cancel"/>
+                    </button>
+                </div>
+            </div>
+        </ifMode>
     </div>
 </htmlform>

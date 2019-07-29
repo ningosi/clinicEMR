@@ -27,7 +27,7 @@
           "questions": [
             {
               "legend": "Address",
-              "field" : [
+              "fields" : [
                 {
                   "type": "personAttribute",
                   "label": "Patient address",
