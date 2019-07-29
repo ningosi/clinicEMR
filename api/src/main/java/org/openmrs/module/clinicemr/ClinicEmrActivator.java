@@ -74,10 +74,10 @@ public class ClinicEmrActivator extends BaseModuleActivator {
 		appFrameworkService.disableApp("appointmentschedulingui.schedulingAppointmentApp");
 		appFrameworkService.disableApp("appointmentschedulingui.requestAppointmentApp");
 		appFrameworkService.disableExtension("appointmentschedulingui.tab");
-		//appFrameworkService
-		//.disableExtension("org.openmrs.module.appointmentschedulingui.firstColumnFragments.patientDashboard.patientAppointments");
+		appFrameworkService
+		        .disableExtension("org.openmrs.module.appointmentschedulingui.firstColumnFragments.patientDashboard.patientAppointments");
 		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientContactInfo");
-		//appFrameworkService.disableExtension("org.openmrs.module.allergyui.patientDashboard.secondColumnFragments");
+		appFrameworkService.disableExtension("org.openmrs.module.allergyui.patientDashboard.secondColumnFragments");
 		
 		MetadataDeployService deployService = Context.getService(MetadataDeployService.class);
 		

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class ClinicEmrCommonDimension {
 	
 	@Autowired
-	private ClinicEmrGenderCohortQueries ssEmrGenderCohortQueries;
+	private ClinicEmrGenderCohortQueries clinicEmrGenderCohortQueries;
 	
 	/**
 	 * Gender dimension
@@ -20,8 +20,8 @@ public class ClinicEmrCommonDimension {
 	public CohortDefinitionDimension gender() {
 		CohortDefinitionDimension dim = new CohortDefinitionDimension();
 		dim.setName("gender");
-		dim.addCohortDefinition("M", ClinicEmrReportUtils.map(ssEmrGenderCohortQueries.male(), ""));
-		dim.addCohortDefinition("F", ClinicEmrReportUtils.map(ssEmrGenderCohortQueries.female(), ""));
+		dim.addCohortDefinition("M", ClinicEmrReportUtils.map(clinicEmrGenderCohortQueries.male(), ""));
+		dim.addCohortDefinition("F", ClinicEmrReportUtils.map(clinicEmrGenderCohortQueries.female(), ""));
 		return dim;
 	}
 }

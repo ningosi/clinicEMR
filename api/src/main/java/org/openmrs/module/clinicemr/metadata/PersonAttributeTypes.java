@@ -141,4 +141,50 @@ public class PersonAttributeTypes {
 			return 0;
 		}
 	};
+	
+	public static PersonAttributeTypeDescriptor ADDRESS = new PersonAttributeTypeDescriptor() {
+		
+		@Override
+		public String uuid() {
+			return "08d08af6-b23a-11e9-96b9-6f94e481bd40";
+		}
+		
+		@Override
+		public String name() {
+			return "Patient Address";
+		}
+		
+		@Override
+		public String description() {
+			return "Address of the patient being seen at the clinic";
+		}
+		
+		@Override
+		public double sortWeight() {
+			return 0;
+		}
+	};
+	
+	public static PersonAttributeTypeDescriptor REG_DATE = new PersonAttributeTypeDescriptor() {
+		
+		@Override
+		public String uuid() {
+			return "042be55c-b23c-11e9-806d-478c4bb2d8f1";
+		}
+		
+		@Override
+		public String name() {
+			return "Date of registration";
+		}
+		
+		@Override
+		public String description() {
+			return "Date when the patient is registered in the clinic";
+		}
+		
+		@Override
+		public double sortWeight() {
+			return 0;
+		}
+	};
 }

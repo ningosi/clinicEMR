@@ -29,6 +29,8 @@ public class ClinicCommonMetadataBundle extends AbstractMetadataBundle {
 		install(PersonAttributeTypes.MEMBERSHIP_NUMBER);
 		install(PersonAttributeTypes.SCHEME_EMPLOYER);
 		install(PersonAttributeTypes.NEXT_OF_KIN_EMAIL);
+		install(PersonAttributeTypes.ADDRESS);
+		install(PersonAttributeTypes.REG_DATE);
 		
 		//install encounter types
 		install(EncounterTypes.CONSULTATIONS);

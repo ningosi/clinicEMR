@@ -2,14 +2,14 @@
   {
     "id": "clinicemr.registerPatient",
     "instanceOf": "registrationapp.registerPatient",
-    "label": "Register Patient",
+    "label": "Registration Desk",
     "description": "clinicemr.registerpatient.description",
     "extensions": [
       {
         "id": "clinicemr.registerPatient.homepageLink",
         "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
         "type": "link",
-        "label": "Register Patient",
+        "label": "Registration Desk",
         "url": "registrationapp/registerPatient.page?appId=clinicemr.registerPatient",
         "icon": "icon-user",
         "order": 1,
@@ -25,6 +25,40 @@
           "id": "demographics",
           "label": "Patient Details",
           "questions": [
+            {
+              "legend": "Address",
+              "field" : [
+                {
+                  "type": "personAttribute",
+                  "label": "Patient address",
+                  "formFieldName": "patientAddress",
+                  "uuid": "08d08af6-b23a-11e9-96b9-6f94e481bd40",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
+                },
+                {
+                  "type": "patientIdentifier",
+                  "label": "Patient Telephone Number",
+                  "formFieldName": "ptelNo",
+                  "uuid": "b3699678-ad27-11e9-95d1-671186f99c27",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+
+                    }
+                  },
+                  "cssClasses": [
+
+                  ]
+                }
+
+              ]
+
+
+            },
             {
               "legend": "Patient Identifiers",
               "fields": [
@@ -43,6 +77,32 @@
                   "cssClasses": [
 
                   ]
+                },
+                {
+                  "type": "patientIdentifier",
+                  "label": "Patient National Id",
+                  "formFieldName": "nationalId",
+                  "uuid": "c93092b8-ad27-11e9-b10d-bb8b20202c8e",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+
+                    }
+                  },
+                  "cssClasses": [
+
+                  ]
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Date of Registration",
+                  "formFieldName": "regDate",
+                  "uuid": "042be55c-b23c-11e9-806d-478c4bb2d8f1",
+                  "widget": {
+                    "providerName": "clinicemr",
+                    "fragmentId": "field/date"
+                  }
                 }
               ]
             },

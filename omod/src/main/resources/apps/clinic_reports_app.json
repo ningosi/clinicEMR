@@ -25,7 +25,7 @@
         "id": "clinicemr.homepageLink",
         "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
         "type": "link",
-        "label": "ClinicEMR Reports",
+        "label": "Clinic Reports",
         "url": "clinicemr/reports.page",
         "icon": "icon-book",
         "order": 110,

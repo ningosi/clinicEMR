@@ -23,7 +23,7 @@
     width: 30%;
 }
 </style>
-<h2>South Sudan Reports</h2>
+<h2>Facility Reports</h2>
 <div class="dashboard clear">
     <div class="info-container column">
         <% if (daily) { %>

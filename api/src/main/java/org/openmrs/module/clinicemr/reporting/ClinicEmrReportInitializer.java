@@ -22,7 +22,7 @@ public class ClinicEmrReportInitializer implements ClinicEmrInitializer {
 				ClinicEmrReportUtils.purgeReportDefinition(reportManager);
 				log.info("Report " + reportManager.getName() + " is deprecated.  Removing it from database.");
 			} else {
-				// setup EPTS active reports
+				// setup clinic active reports
 				ClinicEmrReportUtils.setupReportDefinition(reportManager);
 				log.info("Setting up report " + reportManager.getName() + "...");
 			}

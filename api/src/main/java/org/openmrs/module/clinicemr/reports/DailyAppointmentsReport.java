@@ -37,7 +37,7 @@ public class DailyAppointmentsReport extends ClinicEmrDataExportManager {
 	
 	@Override
 	public String getDescription() {
-		return "Daily Appointments for South Sudan";
+		return "Daily Appointments for the Clinic";
 	}
 	
 	@Override
