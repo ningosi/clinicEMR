@@ -53,6 +53,16 @@
                   "cssClasses": [
 
                   ]
+                },
+                {
+                  "type": "personAttribute",
+                  "label": "Email",
+                  "formFieldName": "emailOfPatient",
+                  "uuid": "f8fef596-ad29-11e9-a89e-4bb98e2fb278",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  }
                 }
 
               ]
@@ -124,16 +134,6 @@
                   "label": "Telephone",
                   "formFieldName": "nextOfKinTelephone",
                   "uuid": "adda6ae6-ad29-11e9-9417-d398d403ac11",
-                  "widget": {
-                    "providerName": "uicommons",
-                    "fragmentId": "field/text"
-                  }
-                },
-                {
-                  "type": "personAttribute",
-                  "label": "Email",
-                  "formFieldName": "nextOfKinEmail",
-                  "uuid": "f8fef596-ad29-11e9-a89e-4bb98e2fb278",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"

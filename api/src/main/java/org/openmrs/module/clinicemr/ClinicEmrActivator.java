@@ -50,7 +50,6 @@ public class ClinicEmrActivator extends BaseModuleActivator {
 		AdministrationService administrationService = Context.getAdministrationService();
 		
 		appFrameworkService.disableApp("referenceapplication.registrationapp.registerPatient");
-		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientDemographics");
 		appFrameworkService.disableApp("referenceapplication.vitals");
 		appFrameworkService.disableExtension("referenceapplication.realTime.simpleAdmission");
 		appFrameworkService.disableExtension("referenceapplication.realTime.simpleVisitNote");
@@ -62,7 +61,7 @@ public class ClinicEmrActivator extends BaseModuleActivator {
 		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientDemographics");
 		
 		// disable apps on the Clinican facing dashboard added through coreapps 1.12.0
-		appFrameworkService.disableApp("coreapps.diagnoses");
+		//appFrameworkService.disableApp("coreapps.diagnoses");
 		appFrameworkService.disableApp("coreapps.latestObsForConceptList");
 		appFrameworkService.disableApp("coreapps.obsAcrossEncounters");
 		appFrameworkService.disableApp("coreapps.obsGraph");
@@ -77,7 +76,7 @@ public class ClinicEmrActivator extends BaseModuleActivator {
 		appFrameworkService
 		        .disableExtension("org.openmrs.module.appointmentschedulingui.firstColumnFragments.patientDashboard.patientAppointments");
 		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientContactInfo");
-		appFrameworkService.disableExtension("org.openmrs.module.allergyui.patientDashboard.secondColumnFragments");
+		//appFrameworkService.disableExtension("org.openmrs.module.allergyui.patientDashboard.secondColumnFragments");
 		
 		MetadataDeployService deployService = Context.getService(MetadataDeployService.class);
 		

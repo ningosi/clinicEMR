@@ -6,5 +6,13 @@
       "provider" : "clinicemr",
       "fragment" : "appointmentSummaryWidget"
     }
+  },
+  {
+    "id" : "${project.parent.groupId}.${project.parent.artifactId}.patientDashboard.latest.obs",
+    "extensionPointId" : "patientDashboard.firstColumnFragments",
+    "extensionParams" : {
+      "provider" : "clinicemr",
+      "fragment" : "latestObsWidget"
+    }
   }
 ]
