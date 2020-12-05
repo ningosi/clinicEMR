@@ -50,29 +50,29 @@ public class ClinicEmrActivator extends BaseModuleActivator {
 		AdministrationService administrationService = Context.getAdministrationService();
 		
 		appFrameworkService.disableApp("referenceapplication.registrationapp.registerPatient");
-		appFrameworkService.disableApp("referenceapplication.vitals");
-		appFrameworkService.disableExtension("referenceapplication.realTime.simpleAdmission");
-		appFrameworkService.disableExtension("referenceapplication.realTime.simpleVisitNote");
-		appFrameworkService.disableExtension("referenceapplication.realTime.vitals");
-		appFrameworkService.disableApp("coreapps.mostRecentVitals");
+		appFrameworkService.enableExtension("referenceapplication.vitals");
+		appFrameworkService.enableExtension("referenceapplication.realTime.simpleAdmission");
+		appFrameworkService.enableExtension("referenceapplication.realTime.simpleVisitNote");
+		appFrameworkService.enableExtension("referenceapplication.realTime.vitals");
+		appFrameworkService.enableExtension("coreapps.mostRecentVitals");
 		appFrameworkService.disableApp("coreapps.findPatient");
 		
 		// the extension to the edit person details
 		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientDemographics");
 		
 		// disable apps on the Clinican facing dashboard added through coreapps 1.12.0
-		//appFrameworkService.disableApp("coreapps.diagnoses");
-		appFrameworkService.disableApp("coreapps.latestObsForConceptList");
+		appFrameworkService.enableExtension("coreapps.diagnoses");
+		appFrameworkService.enableExtension("coreapps.latestObsForConceptList");
 		appFrameworkService.disableApp("coreapps.obsAcrossEncounters");
-		appFrameworkService.disableApp("coreapps.obsGraph");
+		//appFrameworkService.disableApp("coreapps.obsGraph");
 		appFrameworkService.enableApp("coreapps.visitByEncounterType");
 		appFrameworkService.disableApp("coreapps.dataIntegrityViolations");
 		appFrameworkService.disableApp("coreapps.conditionlist");
 		appFrameworkService.disableApp("reportingui.reports");
-		appFrameworkService.disableApp("coreapps.relationships");
-		appFrameworkService.disableApp("appointmentschedulingui.schedulingAppointmentApp");
-		appFrameworkService.disableApp("appointmentschedulingui.requestAppointmentApp");
-		appFrameworkService.disableExtension("appointmentschedulingui.tab");
+		appFrameworkService.enableExtension("coreapps.relationships");
+		//appFrameworkService.disableApp("appointmentschedulingui.schedulingAppointmentApp");
+		//appFrameworkService.disableApp("appointmentschedulingui.requestAppointmentApp");
+		//appFrameworkService.disableExtension("appointmentschedulingui.tab");
 		appFrameworkService
 		        .disableExtension("org.openmrs.module.appointmentschedulingui.firstColumnFragments.patientDashboard.patientAppointments");
 		appFrameworkService.disableExtension("org.openmrs.module.registrationapp.editPatientContactInfo");

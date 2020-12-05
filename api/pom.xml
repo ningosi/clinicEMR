@@ -112,5 +112,32 @@
 			<groupId>org.openmrs.module</groupId>
 			<artifactId>calculation-api</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.africastalking</groupId>
+			<artifactId>core</artifactId>
+			<version>3.4.0</version>
+		</dependency>
 	</dependencies>
+	<repositories>
+		<repository>
+			<id>africastalking</id>
+			<name>AfricasTalking</name>
+			<url>http://dl.bintray.com/africastalking/java</url>
+		</repository>
+	</repositories>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>
+	</build>
 </project>

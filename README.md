@@ -1,1 +1,1 @@
-# SouthSudanEMR
+# Clinic EMR

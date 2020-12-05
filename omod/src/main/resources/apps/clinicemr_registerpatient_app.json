@@ -32,7 +32,7 @@
                   "type": "personAttribute",
                   "label": "Patient address",
                   "formFieldName": "patientAddress",
-                  "uuid": "08d08af6-b23a-11e9-96b9-6f94e481bd40",
+                  "uuid": "73e0250c-e21b-4f87-ac92-04cb96a1d851",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
@@ -42,7 +42,7 @@
                   "type": "patientIdentifier",
                   "label": "Patient Telephone Number",
                   "formFieldName": "ptelNo",
-                  "uuid": "b3699678-ad27-11e9-95d1-671186f99c27",
+                  "uuid": "58975576-e83d-4ef2-adb9-eb2466beb258",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text",
@@ -58,7 +58,7 @@
                   "type": "personAttribute",
                   "label": "Email",
                   "formFieldName": "emailOfPatient",
-                  "uuid": "f8fef596-ad29-11e9-a89e-4bb98e2fb278",
+                  "uuid": "6a036d86-3e7d-4a55-840c-668b28f3b62e",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
@@ -70,60 +70,13 @@
 
             },
             {
-              "legend": "Patient Identifiers",
-              "fields": [
-                {
-                  "type": "patientIdentifier",
-                  "label": "Patient Clinic Number",
-                  "formFieldName": "clinicNo",
-                  "uuid": "9baf3fba-ad27-11e9-b05d-6f4d50626c9f",
-                  "widget": {
-                    "providerName": "uicommons",
-                    "fragmentId": "field/text",
-                    "config": {
-
-                    }
-                  },
-                  "cssClasses": [
-
-                  ]
-                },
-                {
-                  "type": "patientIdentifier",
-                  "label": "Patient National Id",
-                  "formFieldName": "nationalId",
-                  "uuid": "c93092b8-ad27-11e9-b10d-bb8b20202c8e",
-                  "widget": {
-                    "providerName": "uicommons",
-                    "fragmentId": "field/text",
-                    "config": {
-
-                    }
-                  },
-                  "cssClasses": [
-
-                  ]
-                },
-                {
-                  "type": "personAttribute",
-                  "label": "Date of Registration",
-                  "formFieldName": "regDate",
-                  "uuid": "042be55c-b23c-11e9-806d-478c4bb2d8f1",
-                  "widget": {
-                    "providerName": "clinicemr",
-                    "fragmentId": "field/date"
-                  }
-                }
-              ]
-            },
-            {
               "legend": "Next of Kin Information",
               "fields": [
                 {
                   "type": "personAttribute",
                   "label": "Name",
                   "formFieldName": "nextOfKinName",
-                  "uuid": "7a9d0922-ad29-11e9-8348-a74bf5ee86d9",
+                  "uuid": "21f28b9b-d17b-41cd-8284-ac45ecf34bec",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
@@ -133,7 +86,7 @@
                   "type": "personAttribute",
                   "label": "Telephone",
                   "formFieldName": "nextOfKinTelephone",
-                  "uuid": "adda6ae6-ad29-11e9-9417-d398d403ac11",
+                  "uuid": "8899f986-7416-4664-8052-e50d562889db",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
@@ -149,7 +102,7 @@
                   "type": "personAttribute",
                   "label": "Mode of Payment",
                   "formFieldName": "modeOfPayment",
-                  "uuid": "3379c610-ad2a-11e9-ba2e-ff18f696b139",
+                  "uuid": "451881e3-f5dc-4a25-9fcd-43ebcfb2a573",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
@@ -159,7 +112,7 @@
                   "type": "personAttribute",
                   "label": "Membership Number",
                   "formFieldName": "memberShipNo",
-                  "uuid": "602c6cda-ad2a-11e9-affb-bf6691a871fe",
+                  "uuid": "5c129651-e809-435f-ad23-da0f26bb906a",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
@@ -169,7 +122,7 @@
                   "type": "personAttribute",
                   "label": "Scheme/Employer",
                   "formFieldName": "schemeEmployer",
-                  "uuid": "9b93757a-ad2a-11e9-999c-ffbc043e0e08",
+                  "uuid": "ae3a9158-3233-41d8-9d7e-5bf1ab068d17",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text"
